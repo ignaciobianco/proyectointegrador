@@ -10,54 +10,54 @@ const datos = {
     },
     productos : [
       {
-        imagen: "imagen1.jpg",
-        nombre: "Producto 1",
-        descripcion: "Descripción del Producto 1"
+        imagen: "silla.jpg",
+        nombre: "Silla",
+        descripcion: "silla de comedor"
       },
       {
-        imagen: "imagen2.jpg",
-        nombre: "Producto 2",
-        descripcion: "Descripción del Producto 2"
+        imagen: "mesa.jpg",
+        nombre: "Mesa",
+        descripcion: "Mesa de comedor"
       },
       {
-        imagen: "imagen3.jpg",
-        nombre: "Producto 3",
-        descripcion: "Descripción del Producto 3"
+        imagen: "Luz.jpg",
+        nombre: "Luz de noche",
+        descripcion: "Luz ideal para el costado de la cama"
       },
       {
-        imagen: "imagen4.jpg",
-        nombre: "Producto 4",
-        descripcion: "Descripción del Producto 4"
+        imagen: "cama.jpg",
+        nombre: "Cama",
+        descripcion: "Cama king size"
       },
       {
-        imagen: "imagen5.jpg",
-        nombre: "Producto 5",
-        descripcion: "Descripción del Producto 5"
+        imagen: "puf.jpg",
+        nombre: "Puf",
+        descripcion: "puf para dormir"
       },
       {
-        imagen: "imagen6.jpg",
-        nombre: "Producto 6",
-        descripcion: "Descripción del Producto 6"
+        imagen: "ropero.jpg",
+        nombre: "Ropero",
+        descripcion: "Ropero para prendas"
       },
       {
-        imagen: "imagen7.jpg",
-        nombre: "Producto 7",
-        descripcion: "Descripción del Producto 7"
+        imagen: "banqueta.jpg",
+        nombre: "Banqueta",
+        descripcion: "banqueta de bar"
       },
       {
-        imagen: "imagen8.jpg",
-        nombre: "Producto 8",
-        descripcion: "Descripción del Producto 8"
+        imagen: "sillon.jpg",
+        nombre: "Sillon",
+        descripcion: "sillon grand para 6 personas"
       },
       {
-        imagen: "imagen9.jpg",
-        nombre: "Producto 9",
-        descripcion: "Descripción del Producto 9"
+        imagen: "Biblioteca.jpg",
+        nombre: "Biblioteca",
+        descripcion: "biblioteca entran 100 libros"
       },
       {
-        imagen: "imagen10.jpg",
-        nombre: "Producto 10",
-        descripcion: "Descripción del Producto 10"
+        imagen: "colchon.jpg",
+        nombre: "Colchones",
+        descripcion: "colchon queen size"
       }
     ]
   };
