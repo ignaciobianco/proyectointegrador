@@ -12,8 +12,12 @@ const datos = {
       {
         imagen: "silla.jpg",
         nombre: "Silla",
-        descripcion: "silla de comedor"
-        
+        descripcion: "silla de comedor",
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg'
+        }]
       },
       {
         imagen: "mesa.jpg",
