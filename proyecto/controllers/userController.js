@@ -1,4 +1,4 @@
-const productController = {
+const userController = {
     
     login: function (req, res) {
         return res.render('login', {
