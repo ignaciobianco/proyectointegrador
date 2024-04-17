@@ -13,6 +13,7 @@ const datos = {
         imagen: "silla.jpg",
         nombre: "Silla",
         descripcion: "silla de comedor"
+        
       },
       {
         imagen: "mesa.jpg",
