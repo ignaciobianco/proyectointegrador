@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/login', productController.login);
-router.get('/profile-edit', productController.profileEdit);
-router.get('/profile', productController.profile);
-router.get('/register', productController.register);
+router.get('/login', userController.login);
+router.get('/profile-edit', userController.profileEdit);
+router.get('/profile', userController.profile);
+router.get('/register', userController.register);
 
 module.exports = router;
