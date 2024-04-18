@@ -17,12 +17,12 @@ const datos = {
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg',
-        }]
+        }],
         comentarios: [{
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg',
-        }]
+        }],
         comentarios: [{
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
@@ -37,12 +37,12 @@ const datos = {
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg',
-        }]
+        }],
         comentarios: [{
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg',
-        }]
+        }],
         comentarios: [{
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
@@ -57,17 +57,17 @@ const datos = {
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg',
-        }]
+        }],
         comentarios: [{
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg',
-        }]
+        }],
         comentarios: [{
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg',
-        }]
+        }],
       },
       {
         imagen: "cama.jpg",
@@ -77,12 +77,12 @@ const datos = {
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg',
-        }]
+        }],
         comentarios: [{
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg'
-        }]
+        }],
         comentarios: [{
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
@@ -97,17 +97,17 @@ const datos = {
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg',
-        }]
+        }],
         comentarios: [{
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg',
-        }]
+        }],
         comentarios: [{
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg',
-        }]
+        }],
       },
       {
         imagen: "ropero.jpg",
@@ -117,17 +117,17 @@ const datos = {
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg',
-        }]
+        }],
         comentarios: [{
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg',
-        }]
+        }],
         comentarios: [{
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg',
-        }]
+        }],
       },
       {
         imagen: "banqueta.jpg",
@@ -137,17 +137,17 @@ const datos = {
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg'
-        }]
+        }],
         comentarios: [{
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg'
-        }]
+        }],
         comentarios: [{
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg',
-        }]
+        }],
       },
       {
         imagen: "sillon.jpg",
@@ -157,17 +157,17 @@ const datos = {
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg',
-        }]
+        }],
         comentarios: [{
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg',
-        }]
+        }],
         comentarios: [{
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg',
-        }]
+        }],
       },
       {
         imagen: "Biblioteca.jpg",
@@ -177,17 +177,17 @@ const datos = {
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg',
-        }]
+        }],
         comentarios: [{
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg',
-        }]
+        }],
         comentarios: [{
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg',
-        }]
+        }],
       },
       {
         imagen: "colchon.jpg",
@@ -197,17 +197,17 @@ const datos = {
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg',
-        }]
+        }],
         comentarios: [{
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg',
-        }]
+        }],
         comentarios: [{
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
           imagen_perfil: 'bpeleritti.jpg',
-        }]
+        }],
       }
     ]
   };
