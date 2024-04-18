@@ -16,53 +16,198 @@ const datos = {
         comentarios: [{
           textocomentario: 'balaba',
           nombre_usuario: 'bpeleritti',
-          imagen_perfil: 'bpeleritti.jpg'
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
         }]
       },
       {
         imagen: "mesa.jpg",
         nombre: "Mesa",
-        descripcion: "Mesa de comedor"
+        descripcion: "Mesa de comedor",
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
       },
       {
         imagen: "Luz.jpg",
         nombre: "Luz de noche",
-        descripcion: "Luz ideal para el costado de la cama"
+        descripcion: "Luz ideal para el costado de la cama",
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
       },
       {
         imagen: "cama.jpg",
         nombre: "Cama",
-        descripcion: "Cama king size"
+        descripcion: "Cama king size",
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg'
+        }]
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
       },
       {
         imagen: "puf.jpg",
         nombre: "Puf",
-        descripcion: "puf para dormir"
+        descripcion: "puf para dormir",
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
       },
       {
         imagen: "ropero.jpg",
         nombre: "Ropero",
-        descripcion: "Ropero para prendas"
+        descripcion: "Ropero para prendas",
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
       },
       {
         imagen: "banqueta.jpg",
         nombre: "Banqueta",
-        descripcion: "banqueta de bar"
+        descripcion: "banqueta de bar",
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg'
+        }]
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg'
+        }]
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
       },
       {
         imagen: "sillon.jpg",
         nombre: "Sillon",
-        descripcion: "sillon grand para 6 personas"
+        descripcion: "sillon grand para 6 personas",
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
       },
       {
         imagen: "Biblioteca.jpg",
         nombre: "Biblioteca",
-        descripcion: "biblioteca entran 100 libros"
+        descripcion: "biblioteca entran 100 libros",
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
       },
       {
         imagen: "colchon.jpg",
         nombre: "Colchones",
-        descripcion: "colchon queen size"
+        descripcion: "colchon queen size",
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
+        comentarios: [{
+          textocomentario: 'balaba',
+          nombre_usuario: 'bpeleritti',
+          imagen_perfil: 'bpeleritti.jpg',
+        }]
       }
     ]
   };
