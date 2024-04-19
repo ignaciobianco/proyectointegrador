@@ -6,11 +6,11 @@ const datos = {
     contraseña: "orlando",
     fecha_nacimiento: "2023-11-10",
     dni: "46789024",
-    foto_perfil: "bpeleritti.jpg"
+    foto_perfil: "/images/users/profile.png"
   },
   productos: [
     {
-      imagen: "silla.jpg",
+      imagen: "/images/products/e61d09233c8e1a8031977f3f874bfc0b.jpg",
       nombre: "Silla",
       descripcion: "silla de comedor",
       comentarios: [{

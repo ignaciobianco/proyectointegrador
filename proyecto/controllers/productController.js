@@ -1,3 +1,4 @@
+const db = require('../db/index');
 const productController = {
     productos: function (req, res) {
 
