@@ -15,19 +15,19 @@ const datos = {
       descripcion: "silla de comedor",
       comentarios: [{
 
-        textocomentario: 'balaba',
+        textocomentario: 'Este producto superó mis expectativas',
         nombre_usuario: 'bpeleritti',
         imagen_perfil: 'bpeleritti.jpg',
       },
       {
-        textocomentario: 'balaba',
-        nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
+        textocomentario: 'Excelente calidad y precio',
+        nombre_usuario: 'jfernandez',
+        imagen_perfil: 'jfernandez.jpg',
       },
       {
-        textocomentario: 'balaba',
-        nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
+        textocomentario: 'Totalmente satisfecho con mi compra',
+        nombre_usuario: 'mmagarinos',
+        imagen_perfil: 'mmagarinos.jpg',
       }]
     },
     {
@@ -36,17 +36,17 @@ const datos = {
       descripcion: "Mesa de comedor",
       comentarios: [{
 
-        textocomentario: 'balaba',
-        nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
+        textocomentario: 'Increíble producto, lo recomiendo',
+        nombre_usuario: 'mvalentino',
+        imagen_perfil: 'mvalentino.jpg',
       },
       {
-        textocomentario: 'balaba',
-        nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
+        textocomentario: 'Me encanta este producto, es genial',
+        nombre_usuario: 'ibianco',
+        imagen_perfil: 'ibianco.jpg',
       },
       {
-        textocomentario: 'balaba',
+        textocomentario: 'Producto excelente, volvería a comprarlo.',
         nombre_usuario: 'bpeleritti',
         imagen_perfil: 'bpeleritti.jpg',
       }]
@@ -57,19 +57,19 @@ const datos = {
       descripcion: "Luz ideal para el costado de la cama",
       comentarios: [{
 
-        textocomentario: 'balaba',
-        nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
+        textocomentario: 'Cumple con todas mis expectativas.',
+        nombre_usuario: 'jfernandez',
+        imagen_perfil: 'jfernandez.jpg',
       },
       {
-        textocomentario: 'balaba',
-        nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
+        textocomentario: 'Maravilloso producto, muy contento con mi compra.',
+        nombre_usuario: 'mmagarinos',
+        imagen_perfil: 'mmagarinos.jpg',
       },
       {
-        textocomentario: 'balaba',
-        nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
+        textocomentario: 'Fantástica experiencia, este producto es increíble. ',
+        nombre_usuario: 'mvalentino',
+        imagen_perfil: 'mvalentino.jpg',
       }],
     },
     {
@@ -78,19 +78,19 @@ const datos = {
       descripcion: "Cama king size",
       comentarios: [{
 
-        textocomentario: 'balaba',
+        textocomentario: '¡Qué gran producto! Me encanta',
+        nombre_usuario: 'ibianco',
+        imagen_perfil: 'ibianco.jpg',
+      },
+      {
+        textocomentario: 'Es justo lo que necesitaba, excelente.',
         nombre_usuario: 'bpeleritti',
         imagen_perfil: 'bpeleritti.jpg',
       },
       {
-        textocomentario: 'balaba',
-        nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
-      },
-      {
-        textocomentario: 'balaba',
-        nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
+        textocomentario: 'No puedo estar más feliz con este producto.',
+        nombre_usuario: 'jfernandez',
+        imagen_perfil: 'jfernandez.jpg',
       }]
     },
     {
@@ -99,19 +99,19 @@ const datos = {
       descripcion: "puf para dormir",
       comentarios: [{
 
-        textocomentario: 'balaba',
-        nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
+        textocomentario: 'La mejor compra que he hecho en mucho tiempo. ',
+        nombre_usuario: 'mmagarinos',
+        imagen_perfil: 'mmagarinos.jpg',
       },
       {
-        textocomentario: 'balaba',
-        nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
+        textocomentario: 'Producto de alta calidad, muy impresionado',
+        nombre_usuario: 'mvalentino',
+        imagen_perfil: 'mvalentino.jpg',
       },
       {
-        textocomentario: 'balaba',
-        nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
+        textocomentario: 'Simplemente perfecto, no cambiaría nada.',
+        nombre_usuario: 'ibianco',
+        imagen_perfil: 'ibianco.jpg',
       }],
     },
     {
@@ -120,19 +120,19 @@ const datos = {
       descripcion: "Ropero para prendas",
       comentarios: [{
 
-        textocomentario: 'balaba',
+        textocomentario: 'Recomiendo este producto a todos mis amigos.        ',
         nombre_usuario: 'bpeleritti',
         imagen_perfil: 'bpeleritti.jpg',
       },
       {
-        textocomentario: 'balaba',
-        nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
+        textocomentario: 'Superó todas mis expectativas, ¡increíble!',
+        nombre_usuario: 'jfernandez',
+        imagen_perfil: 'jfernandez.jpg',
       },
       {
-        textocomentario: 'balaba',
-        nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
+        textocomentario: 'Este producto hizo mi vida mucho más fácil.',
+        nombre_usuario: 'mmagarinos',
+        imagen_perfil: 'mmagarinos.jpg',
       }],
     },
     {
@@ -141,17 +141,17 @@ const datos = {
       descripcion: "banqueta de bar",
       comentarios: [{
 
-        textocomentario: 'balaba',
-        nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
+        textocomentario: 'No puedo creer lo bueno que es este producto.',
+        nombre_usuario: 'mvalentino',
+        imagen_perfil: 'mvalentino.jpg',
       },
       {
-        textocomentario: 'balaba',
-        nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
+        textocomentario: 'Definitivamente vale la pena cada centavo        ',
+        nombre_usuario: 'ibianco',
+        imagen_perfil: 'ibianco.jpg',
       },
       {
-        textocomentario: 'balaba',
+        textocomentario: 'Me encanta la calidad y el rendimiento de este producto',
         nombre_usuario: 'bpeleritti',
         imagen_perfil: 'bpeleritti.jpg',
       }],
@@ -162,19 +162,19 @@ const datos = {
       descripcion: "sillon grand para 6 personas",
       comentarios: [{
 
-        textocomentario: 'balaba',
-        nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
+        textocomentario: 'Nunca me cansaré de recomendar este producto',
+        nombre_usuario: 'jfernandez',
+        imagen_perfil: 'jfernandez.jpg',
       },
       {
-        textocomentario: 'balaba',
-        nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
+        textocomentario: 'Cada hogar debería tener uno de estos productos',
+        nombre_usuario: 'mmagarinos',
+        imagen_perfil: 'mmagarinos.jpg',
       },
       {
-        textocomentario: 'balaba',
-        nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
+        textocomentario: 'Realmente estoy impresionado con este producto',
+        nombre_usuario: 'mvalentino',
+        imagen_perfil: 'mvalentino.jpg',
       }],
     },
     {
@@ -183,19 +183,19 @@ const datos = {
       descripcion: "biblioteca entran 100 libros",
       comentarios: [{
 
-        textocomentario: 'balaba',
+        textocomentario: '¡Tan bueno que quiero comprar otro!',
+        nombre_usuario: 'ibianco',
+        imagen_perfil: 'ibianco.jpg',
+      },
+      {
+        textocomentario: 'Este producto es justo lo que estaba buscando',
         nombre_usuario: 'bpeleritti',
         imagen_perfil: 'bpeleritti.jpg',
       },
       {
-        textocomentario: 'balaba',
-        nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
-      },
-      {
-        textocomentario: 'balaba',
-        nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
+        textocomentario: 'Nunca pensé que encontraría un producto tan bueno',
+        nombre_usuario: 'jfernandez',
+        imagen_perfil: 'jfernandez.jpg',
       }],
     },
     {
@@ -204,19 +204,19 @@ const datos = {
       descripcion: "colchon queen size",
       comentarios: [{
 
-        textocomentario: 'balaba',
-        nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
+        textocomentario: 'Hace todo lo que necesito y más',
+        nombre_usuario: 'mmagarinos',
+        imagen_perfil: 'mmagarinos.jpg',
       },
       {
-        textocomentario: 'balaba',
-        nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
+        textocomentario: 'Simplemente no hay palabras para describir lo bueno que es este producto',
+        nombre_usuario: 'mvalentino',
+        imagen_perfil: 'mvalentino.jpg',
       },
       {
-        textocomentario: 'balaba',
-        nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
+        textocomentario: 'Muy Bueno',
+        nombre_usuario: 'ibianco',
+        imagen_perfil: 'ibianco.jpg',
       }],
     }
   ]

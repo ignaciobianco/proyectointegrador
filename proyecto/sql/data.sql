@@ -75,16 +75,16 @@ SELECT * FROM proyint.comentarios;
 INSERT INTO comentarios
 VALUES (DEFAULT, 1 , 1 , 'Este producto superó mis expectativas.' ,  default, default, default);
 INSERT INTO comentarios
-VALUES (DEFAULT, 1 , 1 , 'Excelente calidad y precio.}
+VALUES (DEFAULT, 1 , 2 , 'Excelente calidad y precio.}
 ' ,  default, default, default);
 INSERT INTO comentarios
-VALUES (DEFAULT, 1 , 1 , 'Totalmente satisfecho con mi compra.
+VALUES (DEFAULT, 1 , 3 , 'Totalmente satisfecho con mi compra.
 ' ,  default, default, default);
 INSERT INTO comentarios
-VALUES (DEFAULT, 2 , 1 , 'Increíble producto, lo recomiendo.
+VALUES (DEFAULT, 2 , 4 , 'Increíble producto, lo recomiendo.
 ' ,  default, default, default);
 INSERT INTO comentarios
-VALUES (DEFAULT, 2 , 1 , 'Me encanta este producto, es genial.
+VALUES (DEFAULT, 2 , 5 , 'Me encanta este producto, es genial.
 ' ,  default, default, default);
 INSERT INTO comentarios
 VALUES (DEFAULT, 2 , 1 , 'Producto excelente, volvería a comprarlo.
@@ -93,16 +93,16 @@ INSERT INTO comentarios
 VALUES (DEFAULT, 3 , 2 , 'Cumple con todas mis expectativas.
 ' ,  default, default, default);
 INSERT INTO comentarios
-VALUES (DEFAULT, 3 , 2 , 'Maravilloso producto, muy contento con mi compra.
+VALUES (DEFAULT, 3 , 3 , 'Maravilloso producto, muy contento con mi compra.
 ' ,  default, default, default);
 INSERT INTO comentarios
-VALUES (DEFAULT, 3 , 2 , 'Fantástica experiencia, este producto es increíble.
+VALUES (DEFAULT, 3 , 4 , 'Fantástica experiencia, este producto es increíble.
 ' ,  default, default, default);
 INSERT INTO comentarios
-VALUES (DEFAULT, 4 , 2 , '¡Qué gran producto! Me encanta.
+VALUES (DEFAULT, 4 , 5 , '¡Qué gran producto! Me encanta.
 ' ,  default, default, default);
 INSERT INTO comentarios
-VALUES (DEFAULT, 4 , 2 , 'Es justo lo que necesitaba, excelente.
+VALUES (DEFAULT, 4 , 1 , 'Es justo lo que necesitaba, excelente.
 ' ,  default, default, default);
 INSERT INTO comentarios
 VALUES (DEFAULT, 4 , 2 , 'No puedo estar más feliz con este producto.
@@ -111,16 +111,16 @@ INSERT INTO comentarios
 VALUES (DEFAULT, 5 , 3 , 'La mejor compra que he hecho en mucho tiempo.
 ' ,  default, default, default);
 INSERT INTO comentarios
-VALUES (DEFAULT, 5 , 3 , 'Producto de alta calidad, muy impresionado.
+VALUES (DEFAULT, 5 , 4 , 'Producto de alta calidad, muy impresionado.
 ' ,  default, default, default);
 INSERT INTO comentarios
-VALUES (DEFAULT, 5 , 3 , 'Simplemente perfecto, no cambiaría nada.
+VALUES (DEFAULT, 5 , 5 , 'Simplemente perfecto, no cambiaría nada.
 ' ,  default, default, default);
 INSERT INTO comentarios
-VALUES (DEFAULT, 6 , 3 , 'Recomiendo este producto a todos mis amigos.
+VALUES (DEFAULT, 6 , 1 , 'Recomiendo este producto a todos mis amigos.
 ' ,  default, default, default);
 INSERT INTO comentarios
-VALUES (DEFAULT, 6 , 3 , 'Superó todas mis expectativas, ¡increíble!
+VALUES (DEFAULT, 6 , 2 , 'Superó todas mis expectativas, ¡increíble!
 ' ,  default, default, default);
 INSERT INTO comentarios
 VALUES (DEFAULT, 6 , 3 , 'Este producto hizo mi vida mucho más fácil.
@@ -129,16 +129,16 @@ INSERT INTO comentarios
 VALUES (DEFAULT, 7 , 4 , 'No puedo creer lo bueno que es este producto.
 ' ,  default, default, default);
 INSERT INTO comentarios
-VALUES (DEFAULT, 7 , 4 , 'Definitivamente vale la pena cada centavo.
+VALUES (DEFAULT, 7 , 5 , 'Definitivamente vale la pena cada centavo.
 ' ,  default, default, default);
 INSERT INTO comentarios
-VALUES (DEFAULT, 7 , 4 , 'Me encanta la calidad y el rendimiento de este producto.
+VALUES (DEFAULT, 7 , 1 , 'Me encanta la calidad y el rendimiento de este producto.
 ' ,  default, default, default);
 INSERT INTO comentarios
-VALUES (DEFAULT, 8 , 4 , 'Nunca me cansaré de recomendar este producto.
+VALUES (DEFAULT, 8 , 2 , 'Nunca me cansaré de recomendar este producto.
 ' ,  default, default, default);
 INSERT INTO comentarios
-VALUES (DEFAULT, 8 , 4 , 'Cada hogar debería tener uno de estos productos.
+VALUES (DEFAULT, 8 , 3 , 'Cada hogar debería tener uno de estos productos.
 ' ,  default, default, default);
 INSERT INTO comentarios
 VALUES (DEFAULT, 8 , 4 , 'Realmente estoy impresionado con este producto.
@@ -147,16 +147,16 @@ INSERT INTO comentarios
 VALUES (DEFAULT, 9 , 5 , '¡Tan bueno que quiero comprar otro!
 ' ,  default, default, default);
 INSERT INTO comentarios
-VALUES (DEFAULT, 9 , 5 , 'Este producto es justo lo que estaba buscando.
+VALUES (DEFAULT, 9 , 1 , 'Este producto es justo lo que estaba buscando.
 ' ,  default, default, default);
 INSERT INTO comentarios
-VALUES (DEFAULT, 9 , 5 , 'Nunca pensé que encontraría un producto tan bueno.
+VALUES (DEFAULT, 9 , 2 , 'Nunca pensé que encontraría un producto tan bueno.
 ' ,  default, default, default);
 INSERT INTO comentarios
-VALUES (DEFAULT, 10 , 5 , 'Hace todo lo que necesito y más.
+VALUES (DEFAULT, 10 , 3 , 'Hace todo lo que necesito y más.
 ' ,  default, default, default);
 INSERT INTO comentarios
-VALUES (DEFAULT, 10 , 5 , 'Simplemente no hay palabras para describir lo bueno que es este producto.
+VALUES (DEFAULT, 10 , 4 , 'Simplemente no hay palabras para describir lo bueno que es este producto.
 ' ,  default, default, default);
 INSERT INTO comentarios
 VALUES (DEFAULT, 10 , 5 , 'Muy Bueno' ,  default, default, default);
