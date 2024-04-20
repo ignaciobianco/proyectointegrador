@@ -18,14 +18,7 @@ const productController = {
         return res.render('search-results', {})
     },
     
-    headerlogueado: function (req, res) {
-        const datos = db.usuario;
-        return res.render('headerlogueado',{
 
-            perfil: datos })
-    }
-    
-    
     
 
 };
