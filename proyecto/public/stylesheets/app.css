@@ -10,7 +10,7 @@
   --gray: #666666;
   --light-gray: #ebebeb;
   --green: #39b54a;
-  --base-font-family: 'roboto', sans-serif;
+  --base-font-family: Georgia, sans-serif;
 }
 
 
@@ -57,7 +57,7 @@ img {
 
 input,
 textarea {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 hr {
