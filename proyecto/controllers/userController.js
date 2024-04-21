@@ -7,7 +7,13 @@ const userController = {
     },
 
     profileEdit: function (req, res) {
-        return res.render('profile-edit', {})
+        const usuario = db.usuario;
+        return res.render('profile-edit', {
+
+        perfil: usuario
+
+        
+        })
     },
     profile: function (req, res) {
         const usuario = db.usuario;

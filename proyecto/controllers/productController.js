@@ -16,16 +16,17 @@ const productController = {
     },
     addProduct: function (req, res) {
 
+        const usuario = db.usuario;
+
+
         return res.render('product-add', {
+
             perfil: usuario
+
+        
         })},
 
-    headerlogueado: function (req, res) {
-        const usuario = db.usuario;
-        return res.render('headerlogueado', {
-            perfil: usuario
-            })
-        },
+    
 
     
     resultadosBusqueda: function (req, res) {
