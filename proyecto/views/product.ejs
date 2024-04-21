@@ -14,24 +14,24 @@
             <article class="col-12 col-lg-8 product-detail-info">
                 <img src="/images/products/03c29b8335f8bab0610a7907004d0243.jpg" alt="" class="product-detail-img">
                 <p class="product-detail-description">
-                    Descripción corta del producto. En la página principal solo se ven 2 líneas de estar descripción.Lorem ipsum dolor,
-                    sit amet consectetur adipisicing elit. Tae ipsam amet eum, totam dolore libero illo unde? Consectetur dolorem neque
-                    veritatis.</p>
+                    </p>
             </article>
         
                 
                 
             <div class="col-12 col-lg-4">
                 <section class="comments">
+                    <% for (let i = 0; i < comentarios.length; i++) { %>
                     <article>
-                        <img src="https://via.placeholder.com/35" alt="">
+                        <img src="<%= comentarios[i].imagen_perfil %>" alt="">
                         <div class="data">
                             <p class="user">
-                            <strong> <a href="/users/profile"><%= comentario[i].nombre_usuario %>fggdg</a> </strong>
+                            <strong> <a href="/users/profile"> <%= comentarios[i].nombre_usuario %> </a></strong>
+                            <p><%= comentarios[i].textocomentario %></p>
                         </div>
                     </article>
-                    
-                    
+                    <% } %>
+                
                 </section>
                 <form class="form" action="" method="POST">
                     <input class="form-input" type="text" value="" placeholder="Agregar comentario">

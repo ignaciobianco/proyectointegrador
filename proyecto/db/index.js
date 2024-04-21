@@ -17,17 +17,17 @@ const datos = {
 
         textocomentario: 'Este producto superó mis expectativas',
         nombre_usuario: 'bpeleritti',
-        imagen_perfil: 'bpeleritti.jpg',
+        imagen_perfil: '/images/users/bpeleritti.png',
       },
       {
         textocomentario: 'Excelente calidad y precio',
         nombre_usuario: 'jfernandez',
-        imagen_perfil: 'jfernandez.jpg',
+        imagen_perfil: '/images/users/jfernandez.png',
       },
       {
         textocomentario: 'Totalmente satisfecho con mi compra',
         nombre_usuario: 'mmagarinos',
-        imagen_perfil: 'mmagarinos.jpg',
+        imagen_perfil: '/images/users/mmagarinos.png',
       }]
     },
     {
