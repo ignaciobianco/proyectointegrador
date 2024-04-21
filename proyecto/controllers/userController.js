@@ -18,7 +18,18 @@ const userController = {
 
     register: function (req, res) {
         return res.render('register', {})
-    }}
+    },
+
+    headerlogueado: function (req, res) {
+        const usuario = db.usuario;
+        return res.render('headerlogueado', {
+            perfil: usuario
+        })
+    }
+    };
+
+    
+    
     
     
 module.exports = userController

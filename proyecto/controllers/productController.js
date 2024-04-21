@@ -1,4 +1,5 @@
 const db = require('../db/index');
+const { headerlogueado } = require('./userController');
 const productController = {
     productos: function (req, res) {
         const primerProducto = db.productos[0]; // Obtener el primer producto
@@ -16,17 +17,22 @@ const productController = {
     addProduct: function (req, res) {
 
         return res.render('product-add', {
-        })
+            perfil: usuario
+        })},
 
+    headerlogueado: function (req, res) {
+        const usuario = db.usuario;
+        return res.render('headerlogueado', {
+            perfil: usuario
+            })
+        },
 
-    },
+    
     resultadosBusqueda: function (req, res) {
         return res.render('search-results', {})
     },
     
-
     
-
-};
+    };
 
 module.exports = productController
