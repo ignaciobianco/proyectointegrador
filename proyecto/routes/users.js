@@ -4,22 +4,10 @@ let { body } = require("express-validator");
 const userController = require('../controllers/userController')
 let db = require("../database/models");
 
-let loginValidation = [
+let registerValidation = [
     body("email")
       .notEmpty().withMessage("Por favor complete el campo email.")
-      .isEmail().withMessage("Por favor ingrese un email valido.")
-      .custom(function(value){
-        //Validar que el mail exista en la base de datos
-        return db.User.findOne({
-            where: {email: value }
-        })
-        .then(function(user){
-            if(!user){
-                throw new Error("El email no se encuentra registrado")
-            }
-        })
-       
-      }),
+      .isEmail().withMessage("Por favor ingrese un email valido."),
     body("usuario")
       .notEmpty().withMessage("Por favor complete el nombre de usuario"),
     body("contraseña")
@@ -37,5 +25,6 @@ router.get('/login', userController.login);
 router.get('/profile-edit', userController.profileEdit);
 router.get('/profile', userController.profile);
 router.get('/register', userController.register);
+router.post('/register', registerValidation, userController.store)
 
 module.exports = router;

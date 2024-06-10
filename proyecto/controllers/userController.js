@@ -1,4 +1,6 @@
 const db = require('../db/index');
+let { validationResult } = require("express-validator")
+
 const userController = {
     
     login: function (req, res) {
@@ -23,6 +25,17 @@ const userController = {
     },
 
     register: function (req, res) {
+        let errors = validationResult(req)
+        if (errors.isEmpty()){
+            
+        }
+        else{
+
+console.log(errors)
+
+        }
+
+
         return res.render('register', {})
     },
 
@@ -31,8 +44,14 @@ const userController = {
         return res.render('headerlogueado', {
             perfil: usuario
         })
+    },
+    store: function (req,res) {
+    console.log(req.body);
+    return res.redirect('/register')
+}
+
     }
-    };
+    
 
     
     
