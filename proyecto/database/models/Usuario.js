@@ -17,7 +17,7 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.STRING(50),
         },
         fecha: {
-            type: dataTypes.DATA,
+            type: dataTypes.DATE,
         },
         dni: {
             type: dataTypes.INTEGER,
