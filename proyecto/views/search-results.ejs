@@ -4,141 +4,24 @@
 
 
 <div class="container products-wrapper">
-    <div class="row">
-        <div class="col-12">
-            <h2 class="products-title">Resultados de búsqueda</h2>
-        </div>
-        <!-- Show the "ultimos" products -->
-        <h2 class="col-12"> <i><div class="container products-wrapper">
-            <div class="row">
-              <div class="col-12">
-                <h2 class="products-title">Novedades</h2>
-              </div>
-              <!-- Show the "ultimos" products -->
+  <div class="row">
+      <div class="col-12">
+          <h2 class="products-title">Resultados de búsqueda para: "<%= query %>"</h2>
+      </div>
+      
+          <% for (let i = 0; i < productos.length; i++) { %>
               <div class="col-12 col-sm-6 col-lg-3">
-                <section class="product-box">
-                  <a href="/product">
-                    <figure class="product-box_image">
-                      <img src="/images/products/e61d09233c8e1a8031977f3f874bfc0b.jpg" alt="Silla de Comedor">
-                    </figure>
-                    <article class="product-box_data">
-                      <h2>Silla</h2>
-                      <p>Silla de comedor</p>
-                      <p>Comentarios: 3</p>
-                    </article>
-                  </a>
-                </section>
+                  <section class="product-box">
+                      <a href="/product">
+                          <figure class="product-box_image">
+                              <img src="<%= productos[i].imagen_url %>" alt="<%= productos[i].nombre_producto %>">
+                          </figure>
+                          <article class="product-box_data">
+                              <h2><%= productos[i].nombre_producto %></h2>
+                              <p><%= productos[i].descripcion_producto %></p>
+                          </article>
+                      </a>
+                  </section>
               </div>
-              <div class="col-12 col-sm-6 col-lg-3">
-                <section class="product-box">
-                  <a href="/product">
-                    <figure class="product-box_image">
-                      <img src="/images/products/52a46f35e9205db41ab5152ada9bbdc6.jpg" alt="Mesa De Comedor">
-                    </figure>
-                    <article class="product-box_data">
-                      <h2>Mesa</h2>
-                      <p>Mesa de comedor</p>
-                      <p>Comentarios: 3</p>
-                    </article>
-                  </a>
-                </section>
-              </div>
-              <div class="col-12 col-sm-6 col-lg-3">
-                <section class="product-box">
-                  <a href="/product">
-                    <figure class="product-box_image">
-                      <img src="/images/products/ed5ae5474172d557f51a204a6fb3d38d.jpg" alt="Luz de noche">
-                    </figure>
-                    <article class="product-box_data">
-                      <h2>Luz de noche</h2>
-                      <p>Luz ideal para el costado de la cama</p>
-                      <p>Comentarios: 3</p>
-                    </article>
-                  </a>
-                </section>
-              </div>
-              <div class="col-12 col-sm-6 col-lg-3">
-                <section class="product-box">
-                  <a href="/product">
-                    <figure class="product-box_image">
-                      <img src="/images/products/castlery-joseph-king-bed-for-small-bedroom-with-fabric-headboard-and-timber-frame.jpeg" alt="King size">
-                    </figure>
-                    <article class="product-box_data">
-                      <h2>Cama</h2>
-                      <p>Cama king size</p>
-                      <p>Comentarios: 3</p>
-                    </article>
-                  </a>
-                </section>
-              </div>
-            </div>
-          </div>
-          <!-- /Novedades -->
-          <!-- Más comentados -->
-          <div class="container products-wrapper">
-            <div class="row">
-              <div class="col-12">
-                <h2 class="products-title">Más comentados</h2>
-              </div>
-              <!-- Show the "ultimos" products -->
-              <div class="col-12 col-sm-6 col-lg-3">
-                <section class="product-box">
-                  <a href="/product">
-                    <figure class="product-box_image">
-                      <img src="/images/products/03c29b8335f8bab0610a7907004d0243.jpg" alt="Puf">
-                    </figure>
-                    <article class="product-box_data">
-                      <h2>Puf</h2>
-                      <p>Puf para dormir</p>
-                      <p>Comentarios: 3</p>
-                    </article>
-                  </a>
-                </section>
-              </div>
-              <div class="col-12 col-sm-6 col-lg-3">
-                <section class="product-box">
-                  <a href="/product">
-                    <figure class="product-box_image">
-                      <img src="/images/products/5e73686ed2e8e67afdc9c11f3d548909.jpg" alt="Ropero">
-                    </figure>
-                    <article class="product-box_data">
-                      <h2>Ropero</h2>
-                      <p>Ropero para prendas</p>
-                      <p>Comentarios: 3</p>
-                    </article>
-                  </a>
-                </section>
-              </div>
-              <div class="col-12 col-sm-6 col-lg-3">
-                <section class="product-box">
-                  <a href="/product">
-                    <figure class="product-box_image">
-                      <img src="/images/products/33e80b6ee6c4d4939cc8c0ab48505d2c.jpg" alt="Sillon">
-                    </figure>
-                    <article class="product-box_data">
-                      <h2>Sillon</h2>
-                      <p>Sillon grand para 6 personas</p>
-                      <p>Comentarios: 3</p>
-                    </article>
-                  </a>
-                </section>
-              </div>
-              <div class="col-12 col-sm-6 col-lg-3">
-                <section class="product-box">
-                  <a href="/product">
-                    <figure class="product-box_image">
-                      <img src="/images/products/a06360657a430f6d24c87a0d856718de.jpg" alt="Banqueta">
-                    </figure>
-                    <article class="product-box_data">
-                      <h2>Banqueta</h2>
-                      <p>Banqueta de bar</p>
-                      <p>Comentarios: 3</p>
-                    </article>
-                  </a>
-                </section>
-              </div>
-            </div>
-          </div>
-        </h2>
-
+          <% } %>
 <%- include('./partials/footer') %>

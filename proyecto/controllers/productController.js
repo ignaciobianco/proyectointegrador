@@ -1,4 +1,6 @@
-const db = require('../db/index');
+const { where } = require('sequelize');
+const db = require('../database/models');
+const op = db.Sequelize.Op
 const { headerlogueado } = require('./userController');
 const productController = {
     productos: function (req, res) {
@@ -25,7 +27,23 @@ const productController = {
 
     
     resultadosBusqueda: function (req, res) {
-        return res.render('search-results', {})
+        let Buscar = req.query.search
+        db.Producto.findAll({
+            where: [
+
+                { nombre_producto : { [op.like]: `%${Buscar}%`}}
+
+            ]})
+        
+        .then(productosEncontrados => {
+            res.render('search-results', {
+              productos: productosEncontrados,
+              query: Buscar
+
+            });
+        })
+
+        
     },
     
     
