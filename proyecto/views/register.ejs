@@ -5,24 +5,39 @@
     <div class="row">
         <div class="col-12">
             <h2 class="products-title">Registrate</h2>
+            <% if (locals.errors && errors.email) { %>
+                <p class="feedback"><%= errors.email.msg %></p>
+            <% } %>
+            <% if(locals.errors && errors.usuario){ %>
+                <p><%= errors.usuario.msg %></p>
+              <% } %>
+            <% if(locals.errors && errors.contraseña){ %>
+                <p><%= errors.contraseña.msg %></p>
+              <% } %>
+              <% if(locals.errors && errors.fecha_nacimiento){ %>
+                <p><%= errors.fecha_nacimiento.msg %></p>
+              <% } %>
+              <% if(locals.errors && errors.dni){ %>
+                <p><%= errors.dni.msg %></p>
+              <% } %>
         </div>
         <!-- Show the "ultimos" products -->
         <h2 class="col-12">
             <i><form action="/users/register" method="post">
             <label for="email">Email:</label><br>
-            <input type="email"  name="email" required><br><br>
+            <input type="email"  name="email" value="<%= locals.old !== undefined && old.email ? old.email : "" %>"><br><br>
             
             <label for="usuario">Usuario:</label><br>
-            <input type="text"  name="usuario" required><br><br>
+            <input type="text"  name="usuario" value="<%= locals.old !== undefined && old.usuario ? old.usuario : "" %>"><br><br>
             
             <label for="contraseña">Contraseña:</label><br>
-            <input type="password"  name="contraseña" required><br><br>
+            <input type="password"  name="contraseña" value="<%= locals.old !== undefined && old.contraseña ? old.contraseña : "" %>"><br><br>
             
             <label for="fecha_nacimiento">Fecha de nacimiento:</label><br>
-            <input type="date"  name="fecha_nacimiento" ><br><br>
+            <input type="date"  name="fecha_nacimiento" value="<%= locals.old !== undefined && old.fecha_nacimiento ? old.fecha_nacimiento : "" %>"><br><br>
             
             <label for="dni">Número de documento:</label><br>
-            <input type="number" name="dni" ><br><br>
+            <input type="number" name="dni" value="<%= locals.old !== undefined && old.dni ? old.dni : "" %>"><br><br>
             
             <label for="foto_perfil">Foto de perfil (URL):</label><br>
             <input type="text"  name="foto_perfil"><br><br>

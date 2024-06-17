@@ -1,4 +1,5 @@
-const db = require('../db/index');
+const db = require('../database/models');
+let bcriptjs = require('bcryptjs');
 let { validationResult } = require("express-validator")
 
 const userController = {
@@ -25,18 +26,7 @@ const userController = {
     },
 
     register: function (req, res) {
-        let errors = validationResult(req)
-        if (errors.isEmpty()){
-            
-        }
-        else{
-
-console.log(errors)
-
-        }
-
-
-        return res.render('register', {})
+        return res.render('register');
     },
 
     headerlogueado: function (req, res) {
@@ -46,8 +36,24 @@ console.log(errors)
         })
     },
     store: function (req,res) {
-    console.log(req.body);
-    return res.redirect('/register')
+        let errors = validationResult(req);
+        let form = req.body
+
+        if (errors.isEmpty()){
+         let user = {
+            email: form.email,
+            usuario: form.usuario,
+            contraseña: bcriptjs.hashSync(form.contraseña, 10),
+            fecha_nacimiento: form.fecha_nacimiento,
+            dni: form.dni,
+            imagen_de_perfil: form.imagen_de_perfil
+         }
+
+         db.Usuario.create(user);
+         res.redirect('/')
+        } else {
+            return res.render('register', {errors: errors.mapped(), old: req.body})
+        }
 }
 
     }

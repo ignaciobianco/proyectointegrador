@@ -7,14 +7,24 @@ let db = require("../database/models");
 let registerValidation = [
     body("email")
       .notEmpty().withMessage("Por favor complete el campo email.")
-      .isEmail().withMessage("Por favor ingrese un email valido."),
+      .isEmail().withMessage("Por favor ingrese un email valido.")
+      .custom(function(data){
+        return db.Usuario.findOne({
+          where: {email: data},
+        })
+        .then(function(usuario){
+          if(usuario){
+            throw new Error("Este Email ya esta registrado")
+          }
+        })
+      }),
     body("usuario")
       .notEmpty().withMessage("Por favor complete el nombre de usuario"),
     body("contraseña")
       .notEmpty().withMessage("Por favor complete la contraseña").bail()
       .isLength({ min: 4 }).withMessage("La contraseña debe ser mas larga"),
     body("fecha_nacimiento")
-      .isInt().withMessage("Ingrese fecha de nacimiento"),
+      .isDate().withMessage("Ingrese fecha de nacimiento"),
     body("dni")
       .isInt().withMessage("Ingrese numero de documento"),
 ]
