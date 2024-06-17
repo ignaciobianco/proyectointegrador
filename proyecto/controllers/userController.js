@@ -2,12 +2,25 @@ const db = require('../database/models');
 let bcriptjs = require('bcryptjs');
 let { validationResult } = require("express-validator")
 
+
 const userController = {
     
     login: function (req, res) {
-        return res.render('login', {
-        })
+        return res.render('login', {})
     },
+
+    processLogin: function (req, res) {
+        let errores = validationResult(req);
+
+        let form = req.body
+        if (errores.isEmpty()) {
+
+        }
+        else{
+            res.render('login', {errors:errores.mapped(), old: req.body})
+        }
+    },
+
 
     profileEdit: function (req, res) {
         const usuario = db.usuario;
