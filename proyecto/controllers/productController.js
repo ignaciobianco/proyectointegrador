@@ -29,11 +29,12 @@ const productController = {
     resultadosBusqueda: function (req, res) {
         let Buscar = req.query.search
         db.Producto.findAll({
-            where: [
+            where:{ [op.or]: [  
 
-                { nombre_producto : { [op.like]: `%${Buscar}%`}}
+                { nombre_producto : { [op.like]: `%${Buscar}%`}},
+                { descripcion_producto: { [op.like]: `%${Buscar}%`}}
 
-            ]})
+            ]}})
         
         .then(productosEncontrados => {
             res.render('search-results', {
