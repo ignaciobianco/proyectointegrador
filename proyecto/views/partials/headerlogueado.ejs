@@ -16,8 +16,14 @@
 
             <div class="col-12 col-md-4">
                 <a class="main-header_credit-link">
-                    <i class="fas fa-hand-holding-usd"></i>
-                    Todas las opiniones en un solo lugar.
+                    <% if (locals.NombreUsuario != undefined) { %>
+                        <p> Hola <%= locals.NombreUsuario %></p>
+                    <%}else{%>
+                        <p> Hola <%= locals.RecordarmeEmail %></p>
+                        <% } %>
+
+
+
                 </a>
             </div>
         </div>
@@ -34,7 +40,11 @@
 
             <ul class="right-navbar">
                 <li><a href="/users/profile/">
-                    <%= perfil.usuario %>  <i class="fas fa-user"></i>
+                    <% if (locals.NombreUsuario != undefined) { %>
+                        <p><%= locals.NombreUsuario %></p>
+                    <%}else{%>
+                        <p><%= locals.RecordarmeEmail %></p>
+                        <% } %> 
                     </a>
                 </li>
                 <li>

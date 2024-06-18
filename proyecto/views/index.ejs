@@ -1,5 +1,11 @@
 <%- include('./partials/head') %>
+
+<% if ((locals.RecordarmeEmail != undefined) || (locals.NombreUsuario != undefined)) { %>
+  <%- include('./partials/headerlogueado') %>
+<% }else{ %>
 <%- include('./partials/header') %>
+<%}%>
+
 <div class="banner">
   
   <img src="images/decobanner2.png" alt="Banner de ofertas">
@@ -8,7 +14,7 @@
 <div class="container products-wrapper">
   <div class="row">
     <div class="col-12">
-      <h2 class="products-title">Novedades</h2> 
+      <h2 class="products-title">Novedades</h2>
     </div>
     <!-- Show the "ultimos" products -->
     <div class="col-12 col-sm-6 col-lg-3">

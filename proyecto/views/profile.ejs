@@ -1,5 +1,10 @@
 <%- include('./partials/head') %>
-<%- include('./partials/headerlogueado') %>
+
+<% if ((locals.RecordarmeEmail != undefined) || (locals.NombreUsuario != undefined)) { %>
+  <%- include('./partials/headerlogueado') %>
+<% }else{ %>
+<%- include('./partials/header') %>
+<%}%>
 
 
 <section class="info-usuario container products-wrapper">

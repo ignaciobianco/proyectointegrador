@@ -27,15 +27,23 @@ app.use(session({
   secret:"Colibri",
   resave: false,
   saveUninitialized: true,
+  
 
 }))
 
 app.use(function (req, res, next){
-  if (req.session.correo != undefined) {
-    res.locals.correo = req.session.correo
+  if (req.session.NombreUsuario != undefined) {
+    res.locals.NombreUsuario = req.session.NombreUsuario
   }
   return next()
 })
+
+app.use((req, res, next) => {
+  if (req.cookies.RecordarmeEmail != undefined) {
+    res.locals.RecordarmeEmail = req.cookies.RecordarmeEmail;
+  }
+  next();
+});
 
 
 

@@ -2,6 +2,7 @@ const db = require('../database/models');
 let bcriptjs = require('bcryptjs');
 let { validationResult } = require("express-validator")
 const cookieParser = require('cookie-parser');
+const session = require('express-session')
 
 
 
@@ -16,16 +17,19 @@ const userController = {
 
 
         if (errores.isEmpty()) {
+
+            
         
             if (req.body.recordarme !== undefined) {
-                const psw = req.body.password
                 const user = req.body.email
                 res.cookie('RecordarmeEmail', user , { maxAge: 1000*60*30 }); 
             }
-            
-            let correo = req.body.email
-            req.session.correo = correo
+
+            const correo = req.body.email
+            req.session.NombreUsuario = correo
             console.log(req.session);
+            
+            
         
         return res.redirect('/')
 
@@ -37,6 +41,7 @@ const userController = {
         }
 
 
+        
 
         
         

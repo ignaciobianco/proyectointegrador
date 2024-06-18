@@ -1,6 +1,11 @@
-
 <%- include('./partials/head') %>
+
+<% if ((locals.RecordarmeEmail != undefined) || (locals.NombreUsuario != undefined)) { %>
+  <%- include('./partials/headerlogueado') %>
+<% }else{ %>
 <%- include('./partials/header') %>
+<%}%>
+
 
 
 <div class="container products-wrapper">
