@@ -13,26 +13,20 @@ const userController = {
 
     processLogin: function (req, res) {
         let errores = validationResult(req);
-        console.log(req.body.recordarme);
-        console.log(req.body.email);
 
-
-        
 
         if (errores.isEmpty()) {
         
             if (req.body.recordarme !== undefined) {
-                console.log(req.body.password);
                 const psw = req.body.password
                 const user = req.body.email
-                res.cookie('RecordarmeEmail', user , { maxAge: 1000*60*5 }); 
-                res.cookie('RecordarmePassword', psw , { maxAge:1000*60*5 }); 
-                console.log(req.cookies.RecordarmeEmail);
-                console.log(req.cookies.RecordarmePassword);
+                res.cookie('RecordarmeEmail', user , { maxAge: 1000*60*30 }); 
             }
             
+            let correo = req.body.email
+            req.session.correo = correo
+            console.log(req.session);
         
-
         return res.redirect('/')
 
         

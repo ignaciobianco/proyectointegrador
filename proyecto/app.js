@@ -22,12 +22,23 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use(session({
   secret:"Colibri",
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
 
-}));
+}))
+
+app.use(function (req, res, next){
+  if (req.session.correo != undefined) {
+    res.locals.correo = req.session.correo
+  }
+  return next()
+})
+
+
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
