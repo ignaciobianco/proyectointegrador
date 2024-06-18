@@ -49,6 +49,19 @@ const userController = {
     },
 
 
+
+    processLogout: function (req, res) {
+
+        req.session.destroy();
+        res.clearCookie('RecordarmeEmail');
+        res.redirect('/');
+
+
+
+    }, 
+
+
+
     profileEdit: function (req, res) {
         const usuario = db.usuario;
         return res.render('profile-edit', {

@@ -85,6 +85,9 @@ let loginValidantion = [
 
 router.get('/login', userController.login);
 router.post('/login', loginValidantion, userController.processLogin)
+router.post('/logout', userController.processLogout)
+
+
 
 router.get('/profile-edit', userController.profileEdit);
 router.get('/profile', userController.profile);
