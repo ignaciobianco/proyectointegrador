@@ -1,13 +1,48 @@
 const db = require('../database/models');
 let bcriptjs = require('bcryptjs');
 let { validationResult } = require("express-validator")
+const cookieParser = require('cookie-parser');
+
+
 
 const userController = {
     
     login: function (req, res) {
-        return res.render('login', {
-        })
+        return res.render('login', {})
     },
+
+    processLogin: function (req, res) {
+        let errores = validationResult(req);
+
+
+        if (errores.isEmpty()) {
+        
+            if (req.body.recordarme !== undefined) {
+                const psw = req.body.password
+                const user = req.body.email
+                res.cookie('RecordarmeEmail', user , { maxAge: 1000*60*30 }); 
+            }
+            
+            let correo = req.body.email
+            req.session.correo = correo
+            console.log(req.session);
+        
+        return res.redirect('/')
+
+        
+
+        }
+        else{
+            res.render('login', {errors:errores.mapped(), old: req.body})
+        }
+
+
+
+        
+        
+        
+    },
+
 
     profileEdit: function (req, res) {
         const usuario = db.usuario;

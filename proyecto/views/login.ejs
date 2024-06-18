@@ -8,12 +8,22 @@
             <h2 class="products-title">Ingresar</h2>
         </div>
         <!-- Show the "ultimos" products -->
-        <h2 class="col-12"> <i><form action="/users/profile" method="GET">
+
+        <% if(locals.errors && errors.password){ %>
+            <p> <%= errors.password.msg  %> </p>
+            <% } %>
+
+        <% if(locals.errors && errors.email){ %>
+            <p> <%= errors.email.msg  %> </p>
+                <% } %>
+        
+        <h2 class="col-12"> <i><form action="/users/login" method="POST">
             <label for="usuario">Email:</label><br>
-            <input type="email" id="usuario" name="usuario" required><br><br>
+            <input type="email" id="email" name="email" required><br><br>
+            
             
             <label for="contraseña">Contraseña:</label><br>
-            <input type="password" id="contraseña" name="contraseña" required><br><br>
+            <input type="password" id="password" name="password" required><br><br>
             
             <label for="recordarme">Recordarme:</label>
             <input type="checkbox" id="recordarme" name="recordarme"><br><br>
@@ -21,5 +31,7 @@
             <input type="submit" value="Iniciar Sesión">
         </form>
         </h2>
+
+
 
 <%- include('./partials/footer') %>
