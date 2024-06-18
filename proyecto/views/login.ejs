@@ -9,19 +9,21 @@
         </div>
         <!-- Show the "ultimos" products -->
 
+        <% if(locals.errors && errors.password){ %>
+            <p> <%= errors.password.msg  %> </p>
+            <% } %>
+
+        <% if(locals.errors && errors.email){ %>
+            <p> <%= errors.email.msg  %> </p>
+                <% } %>
         
         <h2 class="col-12"> <i><form action="/users/login" method="POST">
             <label for="usuario">Email:</label><br>
             <input type="email" id="email" name="email" required><br><br>
-            <% if(locals.errors && errors.email){ %>
-                <p> <%= errors.email.msg  %> </p>
-                <% } %>
+            
             
             <label for="contraseña">Contraseña:</label><br>
             <input type="password" id="password" name="password" required><br><br>
-            <% if(locals.errors && errors.password){ %>
-                <p> <%= errors.password.msg  %> </p>
-                <% } %>
             
             <label for="recordarme">Recordarme:</label>
             <input type="checkbox" id="recordarme" name="recordarme"><br><br>
@@ -30,7 +32,6 @@
         </form>
         </h2>
 
-        <% console.log(locals.errors); %>
 
 
 <%- include('./partials/footer') %>

@@ -57,7 +57,7 @@ let loginValidantion = [
 
 
   body("password")
-    .notEmpty().withMessage("Por favor complete la contraseña. Intente nuevamente")
+    .notEmpty().withMessage("-Por favor complete la contraseña. Intente nuevamente")
 
     .custom(function (value, { req }) {
       return db.Usuario.findOne({
@@ -66,10 +66,9 @@ let loginValidantion = [
       .then(function (Usuario) {
       let valueEncryptado = bcrypt.hashSync(value,10)
           if (!Usuario) {
-              throw new Error('No existe una cuenta con este Email, Intente nuevamente');
+              throw new Error('-');
           }
           
-          // Compara la contraseña ingresada con la encriptada en la base de datos
           if (!bcrypt.compareSync(Usuario.contraseña , valueEncryptado)) {
               throw new Error('La contraseña es incorrecta, Intente nuevamente');
           }

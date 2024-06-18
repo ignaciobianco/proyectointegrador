@@ -1,6 +1,8 @@
 const db = require('../database/models');
 let bcriptjs = require('bcryptjs');
 let { validationResult } = require("express-validator")
+const cookieParser = require('cookie-parser');
+
 
 
 const userController = {
@@ -11,14 +13,40 @@ const userController = {
 
     processLogin: function (req, res) {
         let errores = validationResult(req);
+        console.log(req.body.recordarme);
+        console.log(req.body.email);
 
-        let form = req.body
+
+        
+
         if (errores.isEmpty()) {
+        
+            if (req.body.recordarme !== undefined) {
+                console.log(req.body.password);
+                const psw = req.body.password
+                const user = req.body.email
+                res.cookie('RecordarmeEmail', user , { maxAge: 1000*60*5 }); 
+                res.cookie('RecordarmePassword', psw , { maxAge:1000*60*5 }); 
+                console.log(req.cookies.RecordarmeEmail);
+                console.log(req.cookies.RecordarmePassword);
+            }
+            
+        
+
+        return res.redirect('/')
+
+        
 
         }
         else{
             res.render('login', {errors:errores.mapped(), old: req.body})
         }
+
+
+
+        
+        
+        
     },
 
 
