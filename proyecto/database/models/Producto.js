@@ -39,7 +39,40 @@ module.exports = function (sequelize, dataTypes) {
 
 
 
-    let Producto = sequelize.define(alias, cols, config)
+let Producto = sequelize.define(alias, cols, config)
+
+Producto.associate = function(models){
+
+Producto.belongsTo(models.Usuario, {
+
+as : 'usuario',
+foreignKey : 'id_usuario'
+
+
+})
+
+
+
+   /* db.Producto.findAll({
+        include: [
+            { association: 'Usuario' },
+            { association: 'Comentario' }
+    
+        ]
+    })*/
+
+}
+
+
+Producto.associate = function(models){
+
+    Producto.hasMany(models.Comentario, {
+    
+    as : 'comentario',
+    foreignKey : 'id_usuario'
+    
+    
+    })}
 
     return Producto
 }
