@@ -10,7 +10,7 @@ const indexController = {
         .then(function (productos) {
             const listaproductos = productos
 
-            return res.render('index', {listaproductos:listaproductosgit}
+            return res.render('index', {listaproductos:listaproductos}
 
             )
         })
