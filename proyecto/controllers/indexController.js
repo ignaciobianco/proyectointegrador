@@ -1,9 +1,18 @@
-const db = require('../db/index');
+const db = require('../database/models');
 const indexController = {
     index: function (req, res) {
-        const listaproductos = db.productos
-        return res.render('index', {
-        index : listaproductos
+
+        db.Producto.findAll({
+            order:[
+                ['createdAt','DESC']
+            ]
+        })
+        .then(function (productos) {
+            const listaproductos = productos
+
+            return res.render('index', {listaproductos:index}
+
+            )
         })
     }
 }
