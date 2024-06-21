@@ -27,7 +27,6 @@ const userController = {
 
             const correo = req.body.email
             req.session.NombreUsuario = correo
-            console.log(req.session);
 
 
 

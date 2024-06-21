@@ -3,7 +3,8 @@ var router = express.Router();
 let { body } = require("express-validator");
 const userController = require('../controllers/userController')
 let db = require("../database/models");
-const bcrypt = require('bcryptjs');
+const bcryptjs = require('bcryptjs');
+
 const Usuario = require('../database/models/Usuario');
 
 
@@ -64,17 +65,26 @@ let loginValidantion = [
           where: { email: req.body.email },
       })
       .then(function (Usuario) {
-      let valueEncryptado = bcrypt.hashSync(value,10)
-          if (!Usuario) {
-              throw new Error('-');
-          }
+       
+
+        if (Usuario != undefined) {
+          console.log(Usuario.contraseña);
+          console.log(req.body.password);
+
+          let chequeo = bcryptjs.compareSync(Usuario.contraseña, req.body.password)
+          console.log(chequeo);
+          if (!chequeo){
+            throw new Error('-La contraseña es incorrecta, Intente nuevamente');
+        }
+    
+        }
+
+      
+       
           
-          if (!bcrypt.compareSync(Usuario.contraseña , valueEncryptado)) {
-              throw new Error('La contraseña es incorrecta, Intente nuevamente');
-          }
       })
   })
-  
+
 
 
 ]
