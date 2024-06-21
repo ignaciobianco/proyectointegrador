@@ -5,14 +5,20 @@ const indexController = {
         db.Producto.findAll({
             order:[
                 ['createdAt','DESC']
-            ]
+            ],
+            include: [{
+
+association: 'usuario'
+    }
+]
+
         })
         .then(function (productos) {
             const listaproductos = productos
 
-            return res.render('index', {listaproductos:listaproductos}
+            return res.render('index' ,  {listaproductos:listaproductos})
 
-            )
+            
         })
     }
 }

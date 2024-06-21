@@ -39,37 +39,37 @@ FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
 SELECT * FROM proyint.usuarios;
 
 INSERT INTO usuarios
-VALUES (DEFAULT, 'bpeleritti@gmail.com' , 'orlando', '2023-11-10' , 46789024 , 'bpeleritti.jpg', now(), now(), now());
+VALUES (DEFAULT, 'bpeleritti@gmail.com' , 'orlando', '2023-11-10' , 46789024 , 'bpeleritti.png', now(), now(), now());
 INSERT INTO usuarios
-VALUES (DEFAULT, 'jfernandez@gmail.com' , 'juanelmascapo', '2023-11-10' , 46789024 , 'bpeleritti.jpg', now(), now(), now());
+VALUES (DEFAULT, 'jfernandez@gmail.com' , 'juanelmascapo', '2023-11-10' , 46789024 , 'jfernandez.png', now(), now(), now());
 INSERT INTO usuarios
-VALUES (DEFAULT, 'mmagarinos@gmail.com' , 'hola123', '2023-11-10' , 46789024 , 'bpeleritti.jpg', now(), now(), now());
+VALUES (DEFAULT, 'mmagarinos@gmail.com' , 'hola123', '2023-11-10' , 46789024 , 'mmagarinos.png', now(), now(), now());
 INSERT INTO usuarios
-VALUES (DEFAULT, 'mvalentino@gmail.com' , 'chau123', '2023-11-10' , 46789024 , 'bpeleritti.jpg', now(), now(), now());
+VALUES (DEFAULT, 'mvalentino@gmail.com' , 'chau123', '2023-11-10' , 46789024 , 'mvalentino.png', now(), now(), now());
 INSERT INTO usuarios
-VALUES (DEFAULT, 'ibianco@gmail.com' , 'viloni', '2023-11-10' , 46789024 , 'bpeleritti.jpg', now(), now(), now());
+VALUES (DEFAULT, 'ibianco@gmail.com' , 'viloni', '2023-11-10' , 46789024 , 'ibianco.png', now(), now(), now());
 
 SELECT * FROM proyint.productos;
 INSERT INTO productos
-VALUES (DEFAULT, 3 , 'silla.jpg', 'Silla' , 'silla de comedor' , now(), now(), now()) ;
+VALUES (DEFAULT, 3 , 'e61d09233c8e1a8031977f3f874bfc0b.jpg', 'Silla' , 'silla de comedor' , now(), now(), now()) ;
 INSERT INTO productos
-VALUES (DEFAULT, 3 , 'mesa.jpg', 'Mesa' , 'Mesa de comedor' , now(), now(), now());
+VALUES (DEFAULT, 3 , '52a46f35e9205db41ab5152ada9bbdc6.jpg', 'Mesa' , 'Mesa de comedor' , now(), now(), now());
 INSERT INTO productos
-VALUES (DEFAULT, 2 , 'Luz.jpg', 'Luz de noche' , 'Luz ideal para el costado de la cama' , now(), now(), now());
+VALUES (DEFAULT, 2 , 'ed5ae5474172d557f51a204a6fb3d38d.jpg', 'Luz de noche' , 'Luz ideal para el costado de la cama' , now(), now(), now());
 INSERT INTO productos
-VALUES (DEFAULT, 2 , 'cama.jpg', 'Cama' , 'Cama king size' , now(), now(), now()) ;
+VALUES (DEFAULT, 2 , 'castlery-joseph-king-bed-for-small-bedroom-with-fabric-headboard-and-timber-frame.jpeg', 'Cama' , 'Cama king size' , now(), now(), now()) ;
 INSERT INTO productos
-VALUES (DEFAULT, 1 , 'ropero.jpg', 'Ropero' , 'Ropero para prendas' , now(), now(), now());
+VALUES (DEFAULT, 1 , '5e73686ed2e8e67afdc9c11f3d548909.jpg', 'Ropero' , 'Ropero para prendas' , now(), now(), now());
 INSERT INTO productos
-VALUES (DEFAULT, 1 , 'banqueta.jpg', 'Banqueta' , 'banqueta de bar' , now(), now(), now());
+VALUES (DEFAULT, 1 , 'a06360657a430f6d24c87a0d856718de.jpg', 'Banqueta' , 'banqueta de bar' , now(), now(), now());
 INSERT INTO productos
-VALUES (DEFAULT, 4 , 'sillon.jpg', 'Sillon' , 'sillon grand para 6 personas' , now(), now(), now());
+VALUES (DEFAULT, 4 , '33e80b6ee6c4d4939cc8c0ab48505d2c.jpg', 'Sillon' , 'sillon grand para 6 personas' , now(), now(), now());
 INSERT INTO productos
-VALUES (DEFAULT, 4 , 'puf.jpg', 'Puf' , 'puf para dormir' , now(), now(), now());
+VALUES (DEFAULT, 4 , '03c29b8335f8bab0610a7907004d0243.jpg', 'Puf' , 'puf para dormir' , now(), now(), now());
 INSERT INTO productos
-VALUES (DEFAULT, 5 , 'Biblioteca.jpg', 'Biblioteca' , 'biblioteca entran 100 libros' , now(), now(), now());
+VALUES (DEFAULT, 5 , 'biblioteca.png', 'Biblioteca' , 'biblioteca entran 100 libros' , now(), now(), now());
 INSERT INTO productos
-VALUES (DEFAULT, 5 , 'colchon.jpg', 'Colchones' , 'colchon queen size' , now(), now(), now());
+VALUES (DEFAULT, 5 , 'colchon.png', 'Colchones' , 'colchon queen size' , now(), now(), now());
 
 SELECT * FROM proyint.comentarios;
 INSERT INTO comentarios

@@ -8,19 +8,41 @@ const { headerlogueado } = require('./userController');
 
 const productController = {
     productos: function (req, res) {
-        const primerProducto = db.productos[0]; // Obtener el primer producto
-        const comentarios = [ // Extraer los primeros tres comentarios
-            primerProducto.comentarios[0],
-            primerProducto.comentarios[1],
-            primerProducto.comentarios[2],
-        ];
 
-        return res.render('product', {
-            producto: primerProducto,
-            comentarios,
+        productId = req.params.id
+
+        db.Producto.findByPk(productId, {
+
+            include: [{
+                association: 'usuario' 
+            }, {
+                association: 'comentarios' , include: [{ association: 'usuario'}]
+            }]
+                
         })
+        .then(function(productos){
+            
+            return res.render('product', { 
+                
+                producto: productos,
+                comentarios: productos.comentarios
+            });
+        }
+        )
 
-    },
+    //     const primerProducto = db.productos[0]; // Obtener el primer producto
+    //     const comentarios = [ // Extraer los primeros tres comentarios
+    //         primerProducto.comentarios[0],
+    //         primerProducto.comentarios[1],
+    //         primerProducto.comentarios[2],
+    //     ];
+
+    //     return res.render('product', {
+    //         producto: primerProducto,
+    //         comentarios,
+    //     })
+
+     },
 
 
 
@@ -57,7 +79,6 @@ const productController = {
 
                 });
             })
-
 
     },
 
