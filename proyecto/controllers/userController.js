@@ -121,7 +121,15 @@ const userController = {
             }
 
             db.Usuario.create(user);
-            res.redirect('/')
+
+
+            const correo = req.body.email
+            req.session.UserName = correo
+
+
+
+            return res.redirect('/')
+  
         } else {
             return res.render('register', { errors: errors.mapped(), old: req.body })
         }
