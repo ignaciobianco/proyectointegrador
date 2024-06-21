@@ -18,12 +18,14 @@
         <div class="data-container col-6">
             <div class="d-flex align-items-center ">
               <h1 class="main-title"><%= info.email %>
-              <% if((locals.RecordarmeEmail == info.email)||(locals.NombreUsuario == info.email)||) %>
-                <a href="/users/profile-edit">
-                        <i class="fas fa-cog"></i>
-                    </a>
-                </h1>
+              <% if((locals.RecordarmeEmail == info.email)||(locals.NombreUsuario == info.email)||(locals.UserName == info.email)){ %>
+                  <a href="/users/profile-edit">
+                          <i class="fas fa-cog"></i>
+                      </a>
+                  </h1>
+                  <% }else{ %>
                 <a class="btn mt-3 ml-4" href="">SEGUIR</a>
+                <% } %>
             </div>
             <div>
                 <ul class="">
