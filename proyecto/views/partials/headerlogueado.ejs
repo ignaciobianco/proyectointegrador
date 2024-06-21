@@ -18,10 +18,12 @@
 
             <div class="col-12 col-md-4">
                 <a class="main-header_credit-link">
-                    <% if (locals.NombreUsuario != undefined) { %>
-                        <p> Hola <%= locals.NombreUsuario %></p>
-                    <%}else{%>
-                        <p> Hola <%= locals.RecordarmeEmail %></p>
+                    <% if (locals.NombreUsuario !== undefined) { %>
+                        <p><%= locals.NombreUsuario %></p>
+                    <% } else if (locals.UserName !== undefined) { %>
+                        <p><%= locals.UserName %></p>
+                    <% } else if (locals.RecordarmeEmail !== undefined) { %>
+                        <p><%= locals.RecordarmeEmail %></p>
                         <% } %>
 
 
@@ -42,13 +44,14 @@
 
             <ul class="right-navbar">
                 <li><a href="/users/profile/">
-                    <% if (locals.NombreUsuario != undefined) { %>
+                    <% if (locals.NombreUsuario !== undefined) { %>
                         <p><%= locals.NombreUsuario %></p>
-                    <%}else{%>
+                    <% } else if (locals.UserName !== undefined) { %>
+                        <p><%= locals.UserName %></p>
+                    <% } else if (locals.RecordarmeEmail !== undefined) { %>
                         <p><%= locals.RecordarmeEmail %></p>
-                        <% } %> 
-                    </a>
-                </li>
+                        <% } %>
+                </a></li>
                 <li>
                     <form action="/users/logout" method="POST">
                         

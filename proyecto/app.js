@@ -45,7 +45,12 @@ app.use((req, res, next) => {
   next();
 });
 
-
+app.use(function (req, res, next){
+  if (req.session.UserName != undefined) {
+    res.locals.UserName = req.session.UserName
+  }
+  return next()
+})
 
 
 app.use('/', indexRouter);
