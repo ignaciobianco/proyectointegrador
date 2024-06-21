@@ -2,7 +2,8 @@ const db = require('../database/models');
 let bcriptjs = require('bcryptjs');
 let { validationResult } = require("express-validator")
 const cookieParser = require('cookie-parser');
-const session = require('express-session')
+const session = require('express-session');
+const { where } = require('sequelize');
 
 
 
@@ -71,9 +72,27 @@ const userController = {
         })
     },
     profile: function (req, res) {
-        const usuario = db.usuario;
-        return res.render('profile', {
-            perfil: usuario
+        
+        
+        const UserId = req.params.id;
+        
+        db.Usuario.findOne({
+            where :{id : UserId},
+
+            include: [{
+                association: 'productos' 
+            },
+            {
+                association: 'comentarios'
+            }
+        ]
+
+        })
+        .then(function(info) {
+                res.render("profile",{info : info})
+
+
+            
         })
     },
 
