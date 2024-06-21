@@ -51,28 +51,16 @@ foreignKey : 'id_usuario'
 
 })
 
+Producto.hasMany(models.Comentario, {
+    as: 'comentarios',
+    foreignKey: 'id_producto'
+});
 
-
-   /* db.Producto.findAll({
-        include: [
-            { association: 'Usuario' },
-            { association: 'Comentario' }
-    
-        ]
-    })*/
-
+   
 }
 
 
-Producto.associate = function(models){
 
-    Producto.hasMany(models.Comentario, {
-    
-    as : 'comentario',
-    foreignKey : 'id_usuario'
-    
-    
-    })}
 
     return Producto
 }
