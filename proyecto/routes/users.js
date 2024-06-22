@@ -100,7 +100,7 @@ router.post('/logout', userController.processLogout)
 
 
 router.get('/profile-edit', userController.profileEdit);
-router.get('/profile', userController.profile);
+router.get('/profile/:id', userController.profile);
 router.get('/register', userController.register);
 router.post('/register', registerValidation, userController.store)
 
