@@ -12,6 +12,7 @@
         <p class="product-detail-description">
             <a href="/product/product-add">Editar</a>
         </p>
+        <p class="product-detail-description" > Creado por: <%= producto.usuario.email %></p>
     </div>
     <div class="product-detail">
         <div class="row">
@@ -19,6 +20,7 @@
                 <img src="/images/products/<%= producto.imagen_producto %>" alt="" class="product-detail-img">
                 <p class="product-detail-description"><%= producto.descripcion_producto %>
                     </p>
+                    
             </article>
         
                 
