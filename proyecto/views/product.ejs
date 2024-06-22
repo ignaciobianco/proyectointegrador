@@ -1,11 +1,10 @@
 <%- include('./partials/head') %>
 
-<% if ((locals.RecordarmeEmail != undefined) || (locals.NombreUsuario != undefined)) { %>
+<% if ((locals.RecordarmeEmail != undefined) || (locals.NombreUsuario != undefined)||(locals.UserName != undefined)) { %>
   <%- include('./partials/headerlogueado') %>
 <% }else{ %>
 <%- include('./partials/header') %>
 <%}%>
-
 <div class="container products-wrapper">
     <div class="d-flex align-items-center">
         <h2 class="products-title"><%= producto.nombre_producto %></h2> 
