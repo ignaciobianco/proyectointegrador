@@ -28,12 +28,9 @@ const userController = {
                 })
                 .then(function(usuario) {
     
-                res.cookie('RecordarmeEmail', usuario.email, { maxAge: 1000 * 60 * 30 });
-                res.cookie('RecordarmeID',usuario.id,{ maxAge: 1000 * 60 * 30 });           
+                res.cookie('RecordarmeEmail', usuario.email , { maxAge: 1000 * 60 * 30 });
+                res.cookie('RecordarmeID',usuario.id , { maxAge: 1000 * 60 * 30 });           
                 req.session.IdUsuario = usuario.id
-                return res.redirect('/')
-    
-                    
                 })
                 
 
