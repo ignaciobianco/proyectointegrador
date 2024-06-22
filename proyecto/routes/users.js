@@ -70,7 +70,7 @@ let loginValidantion = [
           console.log(Usuario.contraseña);
 
           const contraseñaCoincide = bcryptjs.compareSync(value , Usuario.contraseña);
-          if (!contraseñaCoincide) {
+          if (contraseñaCoincide) {
             throw new Error('-La contraseña es incorrecta, Intente nuevamente');
         }
       

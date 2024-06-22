@@ -8,14 +8,22 @@
 <div class="container products-wrapper">
     <div class="d-flex align-items-center">
         <h2 class="products-title"><%= producto.nombre_producto %></h2> 
-        <p class="product-detail-description">
-            <a href="/product/product-edit/<%= producto.id %>">Editar</a>
-        </p>
+        <p class="product-detail-description"></p>
         <p class="product-detail-description" > Creado por: <%= producto.usuario.email %></p>
-        <p class="product-detail-description"> <form action="/product/deleteProduct" method="post">
-            <input type="hidden" name="id" value="<%= producto.id %>">
+        <input type="hidden" name="id" value="<%= producto.id %>">
+           <% if((producto.usuario.id == locals.IdUsuario) || (producto.usuario.id == locals.UserId) || (producto.usuario.id == locals.RecordarmeId)){ %> <p class="product-detail-description"><a href="/product/product-edit/<%= producto.id %>">Editar</p></a>
+        <p class="product-detail-description"> <form action="/product/deleteProduct" method="post"></form>
             <button class="boton-rojo" type="submit">Borrar Producto</button>
-          </form></p>
+        </form></p><% } %>
+        
+
+
+
+
+        
+        
+           
+         
     </div>
     <div class="product-detail">
         <div class="row">
