@@ -16,35 +16,24 @@ const productController = {
         db.Producto.findByPk(productId, {
 
             include: [{
-                association: 'usuario' 
+                association: 'usuario'
             }, {
-                association: 'comentarios' , include: [{ association: 'usuario'}]
+                association: 'comentarios', include: [{ association: 'usuario' }]
             }]
-                
+
         })
-        .then(function(productos){
-            
-            return res.render('product', { 
-                
-                producto: productos,
-                comentarios: productos.comentarios
-            });
-        }
-        )
+            .then(function (productos) {
 
-    //     const primerProducto = db.productos[0]; // Obtener el primer producto
-    //     const comentarios = [ // Extraer los primeros tres comentarios
-    //         primerProducto.comentarios[0],
-    //         primerProducto.comentarios[1],
-    //         primerProducto.comentarios[2],
-    //     ];
+                return res.render('product', {
 
-    //     return res.render('product', {
-    //         producto: primerProducto,
-    //         comentarios,
-    //     })
+                    producto: productos
+                    
+                });
+            }
+            )
 
-     },
+
+    },
 
 
 
@@ -90,7 +79,51 @@ const productController = {
 
     },
 
+    editProduct: function (req, res) {
 
+
+        let id = req.params.id;
+        // return res.send(id)
+        db.Producto.findByPk(id, {
+            include: [{ association: 'usuario' }]
+        })
+            .then(function (result) {
+                // return res.send(result)
+                res.render("product-edit", { productoEdit: result })
+            })
+
+
+    },
+    update: function (req, res) {
+        let id = req.params.id;
+        form = req.body
+        console.log('Datos del formulario:', form);
+
+        let datosActualizados = {
+
+            nombre_producto: form.nombre_producto,
+            descripcion_producto: form.descripcion_producto,
+            imagen_producto: form.imagen_producto
+
+        };
+
+        // return res.send(id)
+        db.Producto.update(datosActualizados, { where: [{ id: id }] })
+            .then(function (result) {
+                console.log('Resultado de la actualización:', result);
+                return res.redirect('/product/' + id)
+
+
+            }).catch(function (error) {
+                console.log(error);
+            })
+
+
+
+
+
+
+    },
 
 
     resultadosBusqueda: function (req, res) {
@@ -116,7 +149,17 @@ const productController = {
 
     },
 
+    del: function (req, res) {
 
+let id = req.body.id;
+let filtro = {where: [{id: id}]}
+db.Producto.destroy(filtro)
+.then(function (result) 
+{return result.redirect('/index')})
+.catch()
+
+
+}
 };
 
 module.exports = productController

@@ -65,24 +65,22 @@ let loginValidantion = [
           where: { email: req.body.email },
       })
       .then(function (Usuario) {
-       
-
         if (Usuario != undefined) {
-          console.log(Usuario.contraseña);
-          console.log(req.body.password);
+          
 
-          let chequeo = bcryptjs.compareSync(Usuario.contraseña, req.body.password)
-          console.log(chequeo);
-          if (!chequeo){
+          const contraseñaCoincide = bcryptjs.compareSync(value , Usuario.contraseña);
+
+          // Hicimos UsuariosCargaddosaMano para poder loguerase con las cuentas que creamos desde el SQL ya que estas no tienen la contraseña Hasheada
+          const UsuariosCargadosaMano = (value == Usuario.contraseña)
+
+          if ((!contraseñaCoincide) && (!UsuariosCargadosaMano)) {
             throw new Error('-La contraseña es incorrecta, Intente nuevamente');
         }
-    
-        }
-
       
-       
-          
-      })
+      }
+      else{
+        throw new Error('-');
+      }})
   })
 
 
@@ -100,7 +98,7 @@ router.post('/logout', userController.processLogout)
 
 
 router.get('/profile-edit', userController.profileEdit);
-router.get('/profile', userController.profile);
+router.get('/profile/:id', userController.profile);
 router.get('/register', userController.register);
 router.post('/register', registerValidation, userController.store)
 

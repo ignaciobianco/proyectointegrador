@@ -1,0 +1,35 @@
+<%- include('./partials/head') %>
+<%- include('./partials/headerlogueado') %>
+
+
+<div class="container products-wrapper">
+    
+    <div class="row">
+        <div class="col-12">
+            <h2 class="products-title">Editar Producto</h2>
+        </div>
+        
+
+        <h2 class="col-12">
+        <form action="/product/product-edit/<%= productoEdit.id %>" method="POST">
+            
+            <input type="hidden" name="id" value="<%= productoEdit.id %>">
+
+            <label for="imagen">Imagen:</label><br>
+            <input type="text" id="imagen" name="imagen_producto" value="<%= productoEdit.imagen_producto %>">
+            <br><br>
+
+
+            <label for="nombre">Nombre del producto:</label><br>
+            <input type="text" id="nombre" name="nombre_producto" value="<%= productoEdit.nombre_producto %>">
+            <br><br>
+
+
+            <label for="descripcion">Descripción:</label><br>
+            <textarea id="descripcion" name="descripcion_producto" rows="4" cols="50" required><%= productoEdit.descripcion_producto %></textarea><br><br>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        </form>
+    </h2>
+<%- include('./partials/footer') %>

@@ -18,8 +18,14 @@ let productAddValidation = [
 router.get('/product-add', productController.addProduct);
 router.post('/product-add', productAddValidation, productController.agregarProducto)
 router.get('/', productController.productos);
+
 router.get('/search-results', productController.resultadosBusqueda);
+
 router.get('/:id', productController.productos);
 
+router.get("/product-edit/:id",productController.editProduct)
+router.post("/product-edit/:id",productController.update)
+
+router.post('/deleteProduct', productController.del)
 
 module.exports = router;

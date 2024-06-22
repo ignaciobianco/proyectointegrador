@@ -38,11 +38,25 @@ app.use(function (req, res, next){
   return next()
 })
 
+app.use(function (req, res, next){
+  if (req.session.IdUsuario != undefined) {
+    res.locals.IdUsuario = req.session.IdUsuario
+  }
+  return next()
+})
+
 app.use((req, res, next) => {
   if (req.cookies.RecordarmeEmail != undefined) {
     res.locals.RecordarmeEmail = req.cookies.RecordarmeEmail;
   }
-  next();
+  return next();
+});
+
+app.use((req, res, next) => {
+  if (req.cookies.RecordarmeID != undefined) {
+    res.locals.RecordarmeID = req.cookies.RecordarmeID;
+  }
+  return next();
 });
 
 app.use(function (req, res, next){
@@ -51,6 +65,14 @@ app.use(function (req, res, next){
   }
   return next()
 })
+
+app.use(function (req, res, next){
+  if (req.session.UserId != undefined) {
+    res.locals.UserId = req.session.UserId
+  }
+  return next()
+})
+
 
 
 app.use('/', indexRouter);
