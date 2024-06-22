@@ -66,11 +66,14 @@ let loginValidantion = [
       })
       .then(function (Usuario) {
         if (Usuario != undefined) {
-          console.log(value);
-          console.log(Usuario.contraseña);
+          
 
           const contraseñaCoincide = bcryptjs.compareSync(value , Usuario.contraseña);
-          if (contraseñaCoincide) {
+
+          // Hicimos UsuariosCargaddosaMano para poder loguerase con las cuentas que creamos desde el SQL ya que estas no tienen la contraseña Hasheada
+          const UsuariosCargadosaMano = (value == Usuario.contraseña)
+
+          if ((!contraseñaCoincide) && (!UsuariosCargadosaMano)) {
             throw new Error('-La contraseña es incorrecta, Intente nuevamente');
         }
       
