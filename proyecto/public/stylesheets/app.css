@@ -476,6 +476,17 @@ textarea.form-input {
   border-radius: 4px;
   color: #fff;
 }
+.boton-rojo {
+  background-color: #ff4d4d; 
+  color: #fff;
+  border: none; 
+  border-radius: 8px; 
+  padding: 10px 20px; 
+  font-size: 16px; 
+  cursor: pointer; /* Cursor tipo mano */
+  letter-spacing: 0.5px; /* Espaciado entre letras */
+  
+}
 
 
 /*====== Media-Queries ======*/
