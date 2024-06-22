@@ -69,14 +69,15 @@ let loginValidantion = [
 
         if (Usuario != undefined) {
           console.log(Usuario.contraseña);
-          console.log(req.body.password);
-
-          let chequeo = bcryptjs.compareSync(Usuario.contraseña, req.body.password)
+          console.log(value);
+          let chequeo = bcryptjs.compareSync(value, Usuario.contraseña);
           console.log(chequeo);
-          if (!chequeo){
+          if (chequeo){
             throw new Error('-La contraseña es incorrecta, Intente nuevamente');
         }
     
+        }else{
+          throw new Error('-');
         }
 
       

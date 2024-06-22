@@ -22,16 +22,41 @@ const userController = {
 
 
             if (req.body.recordarme !== undefined) {
-                const user = req.body.email
-                res.cookie('RecordarmeEmail', user, { maxAge: 1000 * 60 * 30 });
+
+                db.Usuario.findOne({
+                    where :{email : req.body.email},
+                })
+                .then(function(usuario) {
+    
+                res.cookie('RecordarmeEmail', usuario.email, { maxAge: 1000 * 60 * 30 });
+                res.cookie('RecordarmeID',usuario.id,{ maxAge: 1000 * 60 * 30 });           
+                req.session.IdUsuario = usuario.id
+                return res.redirect('/')
+    
+                    
+                })
+                
+
+                
+                
             }
 
-            const correo = req.body.email
-            req.session.NombreUsuario = correo
+            db.Usuario.findOne({
+                where :{email : req.body.email},
+            })
+            .then(function(usuario) {
 
-
-
+            req.session.NombreUsuario = usuario.email
+            req.session.IdUsuario = usuario.id
             return res.redirect('/')
+
+                
+            })
+
+           
+
+
+
 
 
 
@@ -120,15 +145,18 @@ const userController = {
                 imagen_de_perfil: form.imagen_de_perfil
             }
 
-            db.Usuario.create(user);
+            db.Usuario.create(user)
+            .then(function(user) {
+                return db.Usuario.findOne({
+                    where: { email: req.body.email }
+                });
+            })
+            .then(function(usuario) {
+                req.session.UserName = req.body.email;
+                req.session.UserId = usuario.id;
 
-
-            const correo = req.body.email
-            req.session.UserName = correo
-
-
-
-            return res.redirect('/')
+                return res.redirect('/');
+            })
   
         } else {
             return res.render('register', { errors: errors.mapped(), old: req.body })
