@@ -104,8 +104,8 @@ const userController = {
             db.Usuario.create(user);
 
 
-            const correo = req.body.email
-            req.session.UserName = correo
+            const UserName = req.body.email
+            req.session.UserName = UserName
 
 
 

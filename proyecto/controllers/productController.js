@@ -2,7 +2,9 @@ const { where, Association } = require('sequelize');
 const db = require('../database/models');
 const op = db.Sequelize.Op
 const { headerlogueado } = require('./userController');
-
+const { validationResult } = require("express-validator");
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
 
 
 
@@ -50,10 +52,42 @@ const productController = {
 
     addProduct: function (req, res) {
 
-        const usuario = db.usuario;
+         const usuario = db.usuario;
         return res.render('product-add', {
             perfil: usuario
         })
+
+        
+
+
+        
+    },
+
+    agregarProducto: function(req, res) {
+
+        let errors = validationResult(req);
+        let form = req.body
+
+        if (errors.isEmpty()) {
+            let newProduct = {
+                imagen: form.imagen,
+                nombre: form.nombre,
+                descripcion: form.descripcion,
+            }
+
+            db.Producto.create(newProduct);
+
+            return res.redirect('/')
+        } 
+        else {
+            return res.render('product-add', { errors: errors.mapped(), old: req.body })
+        }
+
+
+
+
+
+
     },
 
 
