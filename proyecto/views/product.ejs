@@ -12,6 +12,10 @@
             <a href="/product/product-edit/<%= producto.id %>">Editar</a>
         </p>
         <p class="product-detail-description" > Creado por: <%= producto.usuario.email %></p>
+        <p class="product-detail-description"> <form action="/product/deleteProduct" method="post">
+            <input type="hidden" name="id" value="<%= producto.id %>">
+            <button class="boton-rojo" type="submit">Borrar Producto</button>
+          </form></p>
     </div>
     <div class="product-detail">
         <div class="row">

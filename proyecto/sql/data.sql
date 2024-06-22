@@ -1,7 +1,7 @@
 CREATE TABLE usuarios (
 id int UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 email varchar(50),
-contraseña varchar(50),
+contraseña varchar(500),
 fecha DATE NOT NULL,
 dni int,
 foto_perfil text,

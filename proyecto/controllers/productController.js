@@ -115,7 +115,17 @@ const productController = {
 
     },
 
+    del: function (req, res) {
 
+let id = req.body.id;
+let filtro = {where: [{id: id}]}
+db.Producto.destroy(filtro)
+.then(function (result) 
+{return result.redirect('/index')})
+.catch()
+
+
+}
 };
 
 module.exports = productController
