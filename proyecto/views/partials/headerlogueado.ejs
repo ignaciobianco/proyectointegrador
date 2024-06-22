@@ -44,7 +44,7 @@
             </ul>
 
             <ul class="right-navbar">
-                <li><a href="/users/profile/<%  if (locals.IdUsuario !== undefined) { %>
+                <li><a href="/users/profile/<%  if(locals.IdUsuario !== undefined) { %>
                     <%= locals.IdUsuario %>
                 <% } else if (locals.UserId !== undefined) { %>
                     <%= locals.UserId %>

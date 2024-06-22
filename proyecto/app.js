@@ -40,7 +40,7 @@ app.use(function (req, res, next){
 
 app.use(function (req, res, next){
   if (req.session.IdUsuario != undefined) {
-    res.locals.IdUsuario = req.session.IdUsu
+    res.locals.IdUsuario = req.session.IdUsuario
   }
   return next()
 })

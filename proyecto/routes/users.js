@@ -65,25 +65,19 @@ let loginValidantion = [
           where: { email: req.body.email },
       })
       .then(function (Usuario) {
-       
-
         if (Usuario != undefined) {
-          console.log(Usuario.contraseña);
           console.log(value);
-          let chequeo = bcryptjs.compareSync(value, Usuario.contraseña);
-          console.log(chequeo);
-          if (chequeo){
+          console.log(Usuario.contraseña);
+
+          const contraseñaCoincide = bcryptjs.compareSync(value , Usuario.contraseña);
+          if (!contraseñaCoincide) {
             throw new Error('-La contraseña es incorrecta, Intente nuevamente');
         }
-    
-        }else{
-          throw new Error('-');
-        }
-
       
-       
-          
-      })
+      }
+      else{
+        throw new Error('-');
+      }})
   })
 
 
