@@ -17,9 +17,19 @@
         <div class="data-container col-6">
             <div class="d-flex align-items-center ">
               <h1 class="main-title"><%= info.email %>
-              <% if((locals.RecordarmeEmail == info.email)||(locals.NombreUsuario == info.email)||(locals.UserName == info.email)){ %>
-                  <a href="/users/profile-edit">
-                          <i class="fas fa-cog"></i>
+              <% if((locals.RecordarmeEmail == info.email)||(locals.NombreUsuario == info.email)||(locals.UserName == info.email)||(locals.UsuarioActualizado == info.email)){ %>
+                  <a href="/users/profile-edit/<% 
+                    if(locals.IdUsuario !== undefined) { %>
+                    <%= locals.IdUsuario %>
+                <% } else if (locals.UserId !== undefined) { %>
+                    <%= locals.UserId %>
+                <% } else if (locals.RecordarmeID !== undefined) { %>
+                    <%= locals.RecordarmeID %>
+                    <% } %> "
+                          
+                    
+                    
+                    <i class="fas fa-cog"></i>
                       </a>
                   </h1>
                   <% }else{ %>

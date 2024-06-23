@@ -75,6 +75,13 @@ app.use(function (req, res, next){
 
 
 
+app.use(function (req, res, next){
+  if (req.session.UsuarioActualizado != undefined) {
+    res.locals.UsuarioActualizado = req.session.UsuarioActualizado
+  }
+  return next()
+})
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/product', productRouter)

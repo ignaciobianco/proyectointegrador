@@ -1,6 +1,11 @@
-
 <%- include('./partials/head') %>
-<%- include('./partials/headerlogueado') %>
+
+<% if ((locals.RecordarmeEmail != undefined) || (locals.NombreUsuario != undefined)||(locals.UserName != undefined)) { %>
+  <%- include('./partials/headerlogueado') %>
+<% }else{ %>
+<%- include('./partials/header') %>
+<%}%>
+
 <div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
@@ -8,54 +13,56 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12">
-				
+
+				<% if (locals.errors && errors.email) { %>
+					<p class="feedback"><%= errors.email.msg %></p>
+				<% } %>
+				<% if(locals.errors && errors.contraseña){ %>
+					<p><%= errors.contraseña.msg %></p>
+				  <% } %>
+				  <% if(locals.errors && errors.fecha_nacimiento){ %>
+					<p><%= errors.fecha_nacimiento.msg %></p>
+				  <% } %>
+				  <% if(locals.errors && errors.dni){ %>
+					<p><%= errors.dni.msg %></p>
+				  <% } %>
+
 				<br>
 				<br>
-				
 				<form action="" method="POST">
 					<div>
 						<label for="email">Email:</label>
-						<input type="email" id="email" name="email" value="bpeleritti@gmail.com" readonly required>
+						<input type="email" id="email" name="email" value="<%=info.email%>">
 					</div>
 					<br>
 					<br>
-					<div>
-						<label for="usuario">Usuario:</label>
-						<input type="text" id="usuario" name="usuario" value="bpeleritti" readonly required>
-					</div>
-					<br>
-					<br>
-					<div>
-						<label for="contraseña">Contraseña:</label>
-						<input type="text" id="contraseña" name="contraseña" value="orlando" readonly required>
-					</div>
-					<br>
-					<br>
+					
 					<div>
 						<label for="fecha_nacimiento">Fecha de nacimiento:</label>
-						<input type="date" id="fecha_nacimiento" name="fecha_nacimiento" value="2023-11-10" readonly required>
+						<% console.log(info.fecha); %>
+						<input type="date" id="fecha_nacimiento" name="fecha_nacimiento" value="<%=info.fecha %>">
 					</div>
 					<br>
 					<br>
 					<div>
 						<label for="numero_documento">Número de documento:</label>
-						<input type="text" id="numero_documento" name="numero_documento" value="46789024" readonly required>
-					</div>
-				</form>
-				
-				
-				<br>
-				<br>
-				<form action="/users/profile" method="GET">
+						<input type="text" id="numero_documento" name="dni" value="<%= info.dni %>">
+					</div>	
 
 					<div>
 						<label for="nueva_contraseña">Nueva contraseña:</label>
-						<input type="password" id="nueva_contraseña" name="nueva_contraseña" required>
+						<input type="password" id="nueva_contraseña" name="contraseña">
 					</div>
-					<button type="submit">Cambiar contraseña</button>
+					<br>
+					<button type="submit">Cambiar Datos</button>
+
+				</form>
+				
+				
+			
 
 					
-				</form>
+					
 
 			</h2>
 <%- include('./partials/footer') %>

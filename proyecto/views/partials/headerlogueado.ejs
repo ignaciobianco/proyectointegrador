@@ -19,7 +19,9 @@
             <div class="col-12 col-md-4">
                 <a class="main-header_credit-link"> 
                     
-                    Hola <% if (locals.NombreUsuario !== undefined) { %>
+                    Hola <% if (locals.UsuarioActualizado !== undefined) { %>
+                        <p><%= locals.UsuarioActualizado %></p>
+                    <% }else if (locals.NombreUsuario !== undefined) { %>
                         <p><%= locals.NombreUsuario %></p>
                     <% } else if (locals.UserName !== undefined) { %>
                         <p><%= locals.UserName %></p>
@@ -48,13 +50,15 @@
                     <%= locals.IdUsuario %>
                 <% } else if (locals.UserId !== undefined) { %>
                     <%= locals.UserId %>
-                <% } else if (locals.RecordarmeId !== undefined) { %>
-                    <%= locals.RecordarmeId %>
+                <% } else if (locals.RecordarmeID !== undefined) { %>
+                    <%= locals.RecordarmeID %>
                     <% } %>">
 
 
+                    <% if (locals.UsuarioActualizado !== undefined) { %>
+                        <p><%= locals.UsuarioActualizado %></p>
 
-                    <% if (locals.NombreUsuario !== undefined) { %>
+                    <% }else if (locals.NombreUsuario !== undefined) { %>
                         <p><%= locals.NombreUsuario %></p>
                     <% } else if (locals.UserName !== undefined) { %>
                         <p><%= locals.UserName %></p>

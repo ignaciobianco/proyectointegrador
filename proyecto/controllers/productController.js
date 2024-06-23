@@ -41,7 +41,7 @@ const productController = {
 
     addProduct: function (req, res) {
 
-         const usuario = db.usuario;
+        const usuario = db.usuario;
         return res.render('product-add', {
             perfil: usuario
         })

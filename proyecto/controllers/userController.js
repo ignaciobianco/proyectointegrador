@@ -85,14 +85,66 @@ const userController = {
 
 
     profileEdit: function (req, res) {
-        const usuario = db.usuario;
-        return res.render('profile-edit', {
+        let idUsuario = req.params.id
 
-            perfil: usuario
+        db.Usuario.findOne({
+            where:{id:idUsuario}
+        })
+        .then(function (usuario) {
+            return res.render("profile-edit",{info:usuario})
 
-
+            
         })
     },
+
+    
+    ProcessprofileEdit: function (req, res) {
+        let idUsuario = req.params.id
+
+        let errors = validationResult(req);
+        let form = req.body
+        if (errors.isEmpty()) {
+            db.Usuario.update({
+                email: form.email,
+                contraseña: bcriptjs.hashSync(form.contraseña, 10),
+                fecha_nacimiento: form.fecha_nacimiento,
+                dni: form.dni,
+
+            },
+            {
+                where: {
+                    id:idUsuario
+                }
+            }
+        ).then(function (usuario) {
+            req.session.UsuarioActualizado = form.email
+            return res.render("profile-edit",{info:usuario})
+            
+        })
+            
+        }else{
+            let idUsuario = req.params.id
+
+            db.Usuario.findOne({
+                where:{id:idUsuario}
+            })
+            .then(function (usuario) {
+                return res.render('profile-edit', { errors: errors.mapped(), old: req.body, info:usuario  })
+
+                
+            })
+            
+
+        }
+
+
+        
+    },
+
+
+
+
+
     profile: function (req, res) {
         
         
@@ -111,10 +163,8 @@ const userController = {
 
         })
         .then(function(info) {
-                res.render("profile",{info : info})
+                res.render("profile", {info : info})
 
-
-            
         })
     },
 
@@ -152,13 +202,6 @@ const userController = {
                 req.session.UserName = req.body.email;
                 req.session.UserId = usuario.id;
 
-
-            const UserName = req.body.email
-            req.session.UserName = UserName
-
-
-
-            return res.redirect('/')
                 return res.redirect('/');
             })
   
