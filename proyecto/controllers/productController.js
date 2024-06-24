@@ -42,46 +42,71 @@ const productController = {
 
 
     addProduct: function (req, res) {
-
         const usuario = db.usuario;
-        return res.render('product-add', {
+        return res.render('product-add',{
             perfil: usuario
         })
-
-        
-
-
-        
     },
 
     agregarProducto: function(req, res) {
+        
 
         let errors = validationResult(req);
-        let form = req.body
+        let form = req.body;
+        let id = req.params.id
 
         if (errors.isEmpty()) {
             let newProduct = {
-                imagen: form.imagen,
-                nombre: form.nombre,
-                descripcion: form.descripcion,
-            }
+                imagen_producto: form.imagen,
+                nombre_producto: form.nombre,
+                descripcion_producto: form.descripcion,
+                id_usuario: id, 
+                createdAt: new Date() 
+            };
 
-            db.Producto.create(newProduct);
-
-            return res.redirect('/')
-        } 
-        else {
-            return res.render('product-add', { errors: errors.mapped(), old: req.body })
+            db.Producto.create(newProduct)
+            .then(() => {
+                return res.redirect('/');
+            });
+        } else {
+            return res.render('product-add', { errors: errors.mapped(), old: req.body });
         }
-
-
-
-
-
-
     },
 
-    editProduct: function (req, res) {
+    agregarComentario: function (req, res) {
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+            db.Producto.findByPk(req.params.id) 
+                include: [{
+                    association: 'usuario'
+                }, {
+                    association: 'comentarios',
+                    include: [{ association: 'usuario' }],
+                    order: [['createdAt', 'DESC']]
+                }]
+            db.Comentario.create({
+                texto_comentario: req.body.comentario,
+                productoId: req.params.id,
+                usuarioId: res.locals.IdUsuario,
+                createdAt: new Date()
+            })
+            .then(function (producto) {
+                res.render('product', {
+                    producto: producto,
+                    errors: errors.mapped()
+                });
+            });
+        } else {
+           return res.render('product', {
+                producto: producto,
+                errors: errors.mapped()
+            })
+
+        }},
+
+
+
+    editProduct: function(req, res) {
 
 
         let id = req.params.id;
@@ -157,7 +182,7 @@ let id = req.body.id;
 let filtro = {where: [{id: id}]}
 db.Producto.destroy(filtro)
 .then(function (result) 
-{return result.redirect('/index')})
+{return result.redirect('/')})
 .catch()
 
 

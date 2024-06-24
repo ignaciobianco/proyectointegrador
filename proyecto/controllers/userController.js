@@ -10,7 +10,12 @@ const { where } = require('sequelize');
 const userController = {
 
     login: function (req, res) {
-        return res.render('login', {})
+        if ((req.session.IdUsuario != undefined) ||  (req.session.UserId != undefined) ||  (req.session.RecordarmeID !== undefined)){
+            return res.redirect('/')
+
+            
+        }else{
+        return res.render('login', {})}
     },
 
     processLogin: function (req, res) {
@@ -141,6 +146,8 @@ const userController = {
         
     },
 
+    
+
 
 
 
@@ -169,7 +176,12 @@ const userController = {
     },
 
     register: function (req, res) {
-        return res.render('register');
+        if ((req.session.IdUsuario != undefined) ||  (req.session.UserId != undefined) ||  (req.session.RecordarmeID !== undefined)){
+            return res.redirect('/')
+        }else{
+            return res.render('register');
+
+        }
     },
 
     headerlogueado: function (req, res) {
@@ -178,6 +190,8 @@ const userController = {
             perfil: usuario
         })
     },
+
+
     store: function (req, res) {
         let errors = validationResult(req);
         let form = req.body

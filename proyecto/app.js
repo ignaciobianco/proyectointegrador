@@ -3,12 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const session = require("express-session")
+const session = require("express-session");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 let productRouter = require('./routes/product');
-
 
 var app = express();
 
@@ -22,28 +21,25 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 app.use(session({
   secret:"Colibri",
   resave: false,
   saveUninitialized: true,
-  
-
-}))
+}));
 
 app.use(function (req, res, next){
   if (req.session.NombreUsuario != undefined) {
-    res.locals.NombreUsuario = req.session.NombreUsuario
+    res.locals.NombreUsuario = req.session.NombreUsuario;
   }
-  return next()
-})
+  return next();
+});
 
 app.use(function (req, res, next){
   if (req.session.IdUsuario != undefined) {
-    res.locals.IdUsuario = req.session.IdUsuario
+    res.locals.IdUsuario = req.session.IdUsuario;
   }
-  return next()
-})
+  return next();
+});
 
 app.use((req, res, next) => {
   if (req.cookies.RecordarmeEmail != undefined) {
@@ -61,30 +57,28 @@ app.use((req, res, next) => {
 
 app.use(function (req, res, next){
   if (req.session.UserName != undefined) {
-    res.locals.UserName = req.session.UserName
+    res.locals.UserName = req.session.UserName;
   }
-  return next()
-})
+  return next();
+});
 
 app.use(function (req, res, next){
   if (req.session.UserId != undefined) {
-    res.locals.UserId = req.session.UserId
+    res.locals.UserId = req.session.UserId;
   }
-  return next()
-})
-
-
+  return next();
+});
 
 app.use(function (req, res, next){
   if (req.session.UsuarioActualizado != undefined) {
-    res.locals.UsuarioActualizado = req.session.UsuarioActualizado
+    res.locals.UsuarioActualizado = req.session.UsuarioActualizado;
   }
-  return next()
-})
+  return next();
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/product', productRouter)
+app.use('/product', productRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -6,9 +6,7 @@
 <%- include('./partials/header') %>
 <%}%>
 
-
 <div class="container products-wrapper">
-    
     <div class="row">
         <div class="col-12">
             <h2 class="products-title">Agregar productos</h2>
@@ -17,28 +15,28 @@
             <% } %>
             <% if(locals.errors && errors.nombre){ %>
                 <p><%= errors.nombre.msg %></p>
-              <% } %>
+            <% } %>
             <% if(locals.errors && errors.descripcion){ %>
                 <p><%= errors.descripcion.msg %></p>
-              <% } %>
+            <% } %>
         </div>
-        <!-- Show the "ultimos" products -->
 
-        <h2 class="col-12">
-        <form action="/product/product-add" method="get">
-            <label for="imagen">Imagen:</label><br>
-            <input type="text" id="imagen" name="imagen" accept="image/*"><br><br>
+        <div class="col-12">
+            <form action="" method="post">
+                <label for="imagen">Imagen:</label><br>
+                <input type="text" id="imagen" name="imagen" accept="image/*"><br><br>
 
+                <label for="nombre">Nombre del producto:</label><br>
+                <input type="text" id="nombre" name="nombre"><br><br>
 
-            <label for="nombre">Nombre del producto:</label><br>
-            <input type="text" id="nombre" name="nombre" required><br><br>
+                <label for="descripcion">Descripción:</label><br>
+                <textarea id="descripcion" name="descripcion" rows="4" cols="50"></textarea><br><br>
 
+                <input type="hidden" value="<%= locals.IdUsuario  ||  locals.UserId  ||  locals.RecordarmeID  %>"> 
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+    </div>
+</div>
 
-            <label for="descripcion">Descripción:</label><br>
-            <textarea id="descripcion" name="descripcion" rows="4" cols="50" required></textarea><br><br>
-            <br>
-            <br>
-            <a href="#"></a><input type="submit" value="Enviar">
-        </form>
-    </h2>
 <%- include('./partials/footer') %>

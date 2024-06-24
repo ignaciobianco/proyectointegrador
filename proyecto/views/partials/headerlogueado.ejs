@@ -42,7 +42,13 @@
         <nav class="main-navbar">
             <ul class="left-navbar">
                 <li><a href="/">Todos los productos</a></li>
-                <li><a href="/product/product-add/">Cargar productos</a></li>
+                <li><a href="/product/product-add/<%  if(locals.IdUsuario !== undefined) { %>
+                    <%= locals.IdUsuario %>
+                <% } else if (locals.UserId !== undefined) { %>
+                    <%= locals.UserId %>
+                <% } else if (locals.RecordarmeID !== undefined) { %>
+                    <%= locals.RecordarmeID %>
+                    <% } %>">Cargar productos</a></li>
             </ul>
 
             <ul class="right-navbar">
