@@ -28,6 +28,6 @@ router.get("/product-edit/:id", productController.editProduct);
 router.post("/product-edit/:id", productController.update);
 
 router.post('/deleteProduct/:id', productController.del);
-router.post('/:id/Product', commentValidation, productController.agregarComentario);
+router.post('/:id', commentValidation, productController.agregarComentario);
 
 module.exports = router;
