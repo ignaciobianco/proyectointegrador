@@ -79,7 +79,40 @@ const productController = {
 
     },
 
-    editProduct: function (req, res) {
+    agregarComentario: function (req, res) {
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+            db.Producto.findByPk(req.params.id) 
+                include: [{
+                    association: 'usuario'
+                }, {
+                    association: 'comentarios',
+                    include: [{ association: 'usuario' }],
+                    order: [['createdAt', 'DESC']]
+                }]
+            db.Comentario.create({
+                texto_comentario: req.body.comentario,
+                productoId: req.params.id,
+                usuarioId: res.locals.IdUsuario,
+                createdAt: new Date()
+            })
+            .then(function (producto) {
+                res.render('product', {
+                    producto: producto,
+                    errors: errors.mapped()
+                });
+            });
+        } else {
+           return res.render('product', {
+                producto: producto,
+                errors: errors.mapped()
+            })
+
+        }},
+
+
+
+    editProduct: function(req, res) {
 
 
         let id = req.params.id;

@@ -1,60 +1,59 @@
 <%- include('./partials/head') %>
 
-<% if ((locals.RecordarmeEmail != undefined) || (locals.NombreUsuario != undefined)||(locals.UserName != undefined)) { %>
+<% if ((locals.RecordarmeEmail != undefined) || (locals.NombreUsuario != undefined) || (locals.UserName != undefined)) { %>
   <%- include('./partials/headerlogueado') %>
-<% }else{ %>
-<%- include('./partials/header') %>
-<%}%>
+<% } else { %>
+  <%- include('./partials/header') %>
+<% } %>
+
 <div class="container products-wrapper">
     <div class="d-flex align-items-center">
         <h2 class="products-title"><%= producto.nombre_producto %></h2> 
         <p class="product-detail-description"></p>
-        <p class="product-detail-description" > Creado por: <%= producto.usuario.email %></p>
+        <p class="product-detail-description"> Creado por: <%= producto.usuario.email %></p>
         <input type="hidden" name="id" value="<%= producto.id %>">
-           <% if((producto.usuario.id == locals.IdUsuario) || (producto.usuario.id == locals.UserId) || (producto.usuario.id == locals.RecordarmeId)){ %> <p class="product-detail-description"><a href="/product/product-edit/<%= producto.id %>">Editar</p></a>
-        <p class="product-detail-description"> <form action="/product/deleteProduct" method="post"></form>
-            <button class="boton-rojo" type="submit">Borrar Producto</button>
-        </form></p><% } %>
-        
-
-
-
-
-        
-        
-           
-         
+        <% if((producto.usuario.id == locals.IdUsuario) || (producto.usuario.id == locals.UserId) || (producto.usuario.id == locals.RecordarmeId)){ %>
+          <p class="product-detail-description"><a href="/product/product-edit/<%= producto.id %>">Editar</a></p>
+          <p class="product-detail-description">
+            <form action="/product/deleteProduct" method="post">
+                <input type="hidden" name="id" value="<%= producto.id %>">
+                <button class="boton-rojo" type="submit">Borrar Producto</button>
+            </form>
+          </p>
+        <% } %>
     </div>
     <div class="product-detail">
         <div class="row">
             <article class="col-12 col-lg-8 product-detail-info">
                 <img src="/images/products/<%= producto.imagen_producto %>" alt="" class="product-detail-img">
-                <p class="product-detail-description"><%= producto.descripcion_producto %>
-                    </p>
-                    
+                <p class="product-detail-description"><%= producto.descripcion_producto %></p>
             </article>
-        
-                
-                
-           <div class="col-12 col-lg-4">
+            <div class="col-12 col-lg-4">
                 <section class="comments">
                     <% for (let i = 0; i < producto.comentarios.length; i++) { %>
-                    <article>
-                        <a href="/users/profile/<%= producto.comentarios[i].usuario.id %>"><img src="/images/users/<%= producto.comentarios[i].usuario.foto_perfil %>" alt=""></a>
-                        <div class="data">
-                            <p class="user">
-                                <strong> <a href="/users/profile/<%= producto.comentarios[i].usuario.id %>"> <%= producto.comentarios[i].usuario.email %> </a></strong>
-                            <p><%= producto.comentarios[i].texto_comentario  %></p>
-                        </div>
-                    </article>
+                        <article>
+                            <a href="/users/profile/<%= producto.comentarios[i].usuario.id %>"><img src="/images/users/<%= producto.comentarios[i].usuario.foto_perfil %>" alt=""></a>
+                            <div class="data">
+                                <p class="user">
+                                    <strong><a href="/users/profile/<%= producto.comentarios[i].usuario.id %>"><%= producto.comentarios[i].usuario.email %></a></strong>
+                                </p>
+                                <p><%= producto.comentarios[i].texto_comentario %></p>
+                            </div>
+                        </article>
                     <% } %>
-                
                 </section>
-                <form class="form" action="/product" method="GET">
-                    <input class="form-input" type="text"  placeholder="Agregar comentario">
-                    <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-                </form>
-                <hr>
+                <% if (locals.NombreUsuario || locals.UserName || locals.RecordarmeEmail) { %>
+                    <form class="form" action="/product/<%= producto.id %>" method="POST">
+                        <input class="form-input" type="text" name="comentario" placeholder="Agregar comentario">
+                        <% if (locals.errors && locals.errors.comentario) { %>
+                            <p><%= locals.errors.comentario.msg %></p>
+                        <% } %>
+                        <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+                    </form>
+                <% } else { %>
+                    <p>Debes estar logueado para comentar</p>
+                <% } %>
+            
             </div>
         </div>
     </div>
