@@ -40,43 +40,35 @@ const productController = {
 
 
     addProduct: function (req, res) {
-
         const usuario = db.usuario;
-        return res.render('product-add', {
+        return res.render('product-add',{
             perfil: usuario
         })
-
-        
-
-
-        
     },
 
     agregarProducto: function(req, res) {
+        
 
         let errors = validationResult(req);
-        let form = req.body
+        let form = req.body;
+        let id = req.params.id
 
         if (errors.isEmpty()) {
             let newProduct = {
-                imagen: form.imagen,
-                nombre: form.nombre,
-                descripcion: form.descripcion,
-            }
+                imagen_producto: form.imagen,
+                nombre_producto: form.nombre,
+                descripcion_producto: form.descripcion,
+                id_usuario: id, 
+                createdAt: new Date() 
+            };
 
-            db.Producto.create(newProduct);
-
-            return res.redirect('/')
-        } 
-        else {
-            return res.render('product-add', { errors: errors.mapped(), old: req.body })
+            db.Producto.create(newProduct)
+            .then(() => {
+                return res.redirect('/');
+            });
+        } else {
+            return res.render('product-add', { errors: errors.mapped(), old: req.body });
         }
-
-
-
-
-
-
     },
 
     agregarComentario: function (req, res) {
@@ -188,7 +180,7 @@ let id = req.body.id;
 let filtro = {where: [{id: id}]}
 db.Producto.destroy(filtro)
 .then(function (result) 
-{return result.redirect('/index')})
+{return result.redirect('/')})
 .catch()
 
 
