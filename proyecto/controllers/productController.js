@@ -177,15 +177,14 @@ const productController = {
     },
 
     del: function (req, res) {
-
-let id = req.body.id;
-let filtro = {where: [{id: id}]}
-db.Producto.destroy(filtro)
-.then(function (result) 
-{return result.redirect('/')})
-.catch()
-
-
+    const id = Number(req.params.id);
+    db.Producto.findByPk(id)
+    .then(producto => {
+        return db.Producto.destroy({ where: { id: id } });
+    })
+    .then(function(){
+    res.redirect('/'); // Redirigimos a la página principal después de eliminar el producto
+})
 }
 };
 

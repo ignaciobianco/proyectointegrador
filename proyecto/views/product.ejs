@@ -14,12 +14,11 @@
         <input type="hidden" name="id" value="<%= producto.id %>">
         <% if((producto.usuario.id == locals.IdUsuario) || (producto.usuario.id == locals.UserId) || (producto.usuario.id == locals.RecordarmeId)){ %>
           <p class="product-detail-description"><a href="/product/product-edit/<%= producto.id %>">Editar</a></p>
-          <p class="product-detail-description">
-            <form action="" method="post">
-                <input name="id" value="<%= producto.id %>">
+          <p class="product-detail-description"></p>
+
+            <form action="/product/deleteProduct/<%= producto.id %>" method="post">
                 <button class="boton-rojo" type="submit">Borrar Producto</button>
             </form>
-          </p>
         <% } %>
     </div>
     <div class="product-detail">
