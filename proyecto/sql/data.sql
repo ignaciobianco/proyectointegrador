@@ -1,3 +1,7 @@
+CREATE DATABASE proyint;
+USE proyint;
+
+
 CREATE TABLE usuarios (
 id int UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 email varchar(50),

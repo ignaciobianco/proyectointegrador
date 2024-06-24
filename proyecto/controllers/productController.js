@@ -14,7 +14,9 @@ const productController = {
         productId = req.params.id
 
         db.Producto.findByPk(productId, {
-
+            order:[
+                ['createdAt','DESC']
+            ],
             include: [{
                 association: 'usuario'
             }, {
