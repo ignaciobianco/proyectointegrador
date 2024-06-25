@@ -177,7 +177,7 @@ const productController = {
     },
 
     del: function (req, res) {
-    const id = Number(req.params.id);
+    const id = req.params.id
     db.Producto.findByPk(id)
     .then(producto => {
         return db.Producto.destroy({ where: { id: id } });
