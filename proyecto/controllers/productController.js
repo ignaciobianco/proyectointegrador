@@ -75,26 +75,23 @@ const productController = {
 
     agregarComentario: function (req, res) {
         let errors = validationResult(req);
+        let id = req.params.id
         if (errors.isEmpty()) {
-            db.Producto.findByPk(req.params.id) 
-                include: [{
-                    association: 'usuario'
-                }, {
-                    association: 'comentarios',
-                    include: [{ association: 'usuario' }],
-                    order: [['createdAt', 'DESC']]
-                }]
+            db.Producto.findByPk(req.params.id,  {include: [{
+                association: 'usuario'
+            }, {
+                association: 'comentarios',
+                include: [{ association: 'usuario' }],
+                order: [['createdAt', 'DESC']]
+            }] })
             db.Comentario.create({
                 texto_comentario: req.body.comentario,
-                productoId: req.params.id,
-                usuarioId: res.locals.IdUsuario,
+                id_producto: req.params.id,
+                id_usuario: (req.session.UserId || req.cookies.RecordarmeID || req.session.IdUsuario),
                 createdAt: new Date()
             })
             .then(function (producto) {
-                res.render('product', {
-                    producto: producto,
-                    errors: errors.mapped()
-                });
+                return res.redirect('/product/' + id)
             });
         } else {
            return res.render('product', {
